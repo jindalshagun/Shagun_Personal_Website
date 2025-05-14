@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Shagun Jindal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #f8f8f8;
+            color: #333333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .container {
+            width: 70%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo .dot {
+            color: #c64b8c;
+            margin-left: 2px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        nav ul li a:hover {
+            color: #c64b8c;
+        }
+
+        /* Mobile Menu - Added from values.html */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background-color: #333;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            z-index: 100;
+            overflow: hidden;
+            width: 180px;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-nav ul li {
+            width: 100%;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+            padding: 14px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #333333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .mobile-nav ul li a:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .mobile-nav ul li a.active {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .contact-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+        }
+        .contact-title {
+            color: #c64b8c;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+        .contact-icon {
+            width: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-icon img {
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+        .contact-link {
+            text-decoration: none;
+            color: #666666;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .contact-link:hover {
+            color: #c64b8c;
+        }
+        .contact-text {
+            font-size: 1rem;
+        }
+
+        /* Responsive Adjustments - Updated from values.html */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+
+            .contact-content {
+                padding: 1.8rem;
+                margin-left: -10px;
+                margin-right: -10px;
+                width: calc(100% + 20px);
+                border-radius: 8px;
+            }
+
+            .contact-title {
+                font-size: 1.6rem;
+            }
+            
+            /* Show mobile menu button and hide regular nav */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                width: 85%;
+            }
+            
+            nav ul {
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header>
+            <a href="index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
+            <!-- Mobile Menu Button - Added from values.html -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Regular Navigation (Hidden on Mobile) -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="1aboutsection.html">About</a></li>
+                    <li><a href="2values.html">My Values</a></li>
+                    <li><a href="3thoughts.html">Thoughts</a></li>
+                    <li><a href="4contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Mobile Navigation (Dropdown) - Added from values.html -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="1aboutsection.html">About</a></li>
+                <li><a href="2values.html">My Values</a></li>
+                <li><a href="3thoughts.html">Thoughts</a></li>
+                <li><a href="4contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- CONTACT CONTENT -->
+        <div class="contact-content">
+            <h2 class="contact-title">Contact Me</h2>
+            
+            <div class="contact-info">
+                <!-- Email Contact -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <img src="gmail.png" alt="Gmail Icon">
+                    </div>
+                    <div class="contact-text">
+                        <a href="mailto:shagunjindal1998@gmail.com" class="contact-link">shagunjindal1998@gmail.com</a>
+                    </div>
+                </div>
+                
+                <!-- LinkedIn Contact -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <img src="linkedin.png" alt="LinkedIn Icon">
+                    </div>
+                    <div class="contact-text">
+                        <a href="https://www.linkedin.com/in/jindal-shagun/" target="_blank" class="contact-link">linkedin.com/in/jindal-shagun</a>
+                    </div>
+                </div>
+                
+                <!-- Instagram Contact -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <img src="instagram.png" alt="Instagram Icon">
+                    </div>
+                    <div class="contact-text">
+                        <a href="https://www.instagram.com" target="_blank" class="contact-link">@shagun_jindal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu - Added from values.html -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuBtn.contains(event.target) && !mobileNav.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

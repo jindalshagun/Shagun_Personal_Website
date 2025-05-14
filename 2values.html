@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Values - Shagun Jindal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 70%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles - Same as main page */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .dot {
+            color: #c64b8c;
+            margin-left: 2px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #c64b8c;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background-color: #333;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            z-index: 100;
+            overflow: hidden;
+            width: 180px;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-nav ul li {
+            width: 100%;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+            padding: 14px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #333333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .mobile-nav ul li a:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .mobile-nav ul li a.active {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Values Page Specific Styles */
+        .values-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+        }
+
+        .values-title {
+            color: #c64b8c;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .values-intro {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .value-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        .value-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .value-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .value-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #c64b8c;
+        }
+
+        .value-name {
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .value-description {
+            color: #666;
+            padding-left: 2.5rem;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+
+            .values-content {
+                padding: 1.8rem;
+                margin-left: -10px;
+                margin-right: -10px;
+                width: calc(100% + 20px);
+                border-radius: 8px;
+            }
+
+            .values-title {
+                font-size: 1.6rem;
+            }
+
+            .value-item {
+                margin-left: 0;
+                margin-right: 0;
+                padding: 1.2rem 1.4rem;
+            }
+            
+            /* Show mobile menu button and hide regular nav */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .value-header {
+                flex-wrap: wrap;
+            }
+            
+            .value-name {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                width: 85%;
+            }
+            
+            nav ul {
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header>
+            <a href="index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Regular Navigation (Hidden on Mobile) -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="1aboutsection.html">About</a></li>
+                    <li><a href="2values.html">My Values</a></li>
+                    <li><a href="3thoughts.html" class="active">Thoughts</a></li>
+                    <li><a href="4contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Mobile Navigation (Dropdown) -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                    <li><a href="1aboutsection.html">About</a></li>
+                    <li><a href="2values.html">My Values</a></li>
+                    <li><a href="3thoughts.html" class="active">Thoughts</a></li>
+                    <li><a href="4contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- VALUES CONTENT -->
+        <div class="values-content">
+            <h2 class="values-title">My Core Values</h2>
+            <p class="values-intro">
+                Everyone has some fundamental principles they live by. Most of mine were shaped by my father's guidance over the years. I call these my non-negotiables, values that guide me in everything I do.
+            </p>
+            <div class="value-item">
+                <div class="value-header">
+                    <span class="value-icon">🚀</span>
+                    <span class="value-name">Do It. Instead of Thinking About It.</span>
+                </div>
+                <p class="value-description">
+                    Send that email. Attend that event. Build that product. The worst that can happen is a “no” or a flawed first version. That's still better than doing nothing at all. A rough product beats no product any day. Stop overthinking.
+                </p>
+            </div>
+            <div class="value-item">
+                <div class="value-header">
+                    <span class="value-icon">🤝</span>
+                    <span class="value-name">Pay It Forward</span>
+                </div>
+                <p class="value-description">
+                    Always remember that people helped you without any labels or expectations- sometimes even just through a cold email. Their support gave you direction when you needed it most. Now it's your turn to do the same.
+                </p>
+            </div>
+            <div class="value-item">
+                <div class="value-header">
+                    <span class="value-icon">💡</span>
+                    <span class="value-name">Ask That Question</span>
+                </div>
+                <p class="value-description">
+                    Sometimes it's better to appear uninformed for a moment than to miss the chance to learn something new. Growth happens when you are not the smartest person in the room and that's a good thing.
+                </p>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-header">
+                        <span class="value-icon">🌱</span>
+                        <span class="value-name">Forgive Yourself For Your Past Mistakes</span>
+                    </div>
+                    <p class="value-description">
+                        In life you will inevitebly misspeek, overthink, self-sabotage and ruin perfectly good moments for yourself and for others. These mistake are bound to happen. So, learn from them and move forward. Remember, mistakes != failure.
+                    </p>
+                </div>  
+            
+
+            <div class="value-item">
+                <div class="value-header">
+                    <span class="value-icon">🔍</span>
+                    <span class="value-name">Always Trust Your Core People</span>
+                </div>
+                <p class="value-description">
+                    The ones who stand by you through thick and thin are irreplaceable. When their honesty hurts, remember they are telling truths others won't. Express your gratitude often.
+                </p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-header">
+                    <span class="value-icon">🔥</span>
+                    <span class="value-name">Let It Be</span>
+                </div>
+                <p class="value-description">
+                    Release the need to control others actions or decisions. People move on their own timelines and that's okay. Channel your energy toward pursuits that genuinely spark your curiosity and passion.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuBtn.contains(event.target) && !mobileNav.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

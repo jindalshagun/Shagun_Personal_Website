@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Shagun Jindal</title>
+    <style>
+        /* Reusing most of the styles from the main page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 70%; /* Reduced from 80% to increase margins */
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles - Same as main page */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .dot {
+            color: #c64b8c;
+            margin-left: 2px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #c64b8c;
+        }
+
+        /* Mobile Menu - Added from thoughts.html */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background-color: #333;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            z-index: 100;
+            overflow: hidden;
+            width: 180px;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-nav ul li {
+            width: 100%;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+            padding: 14px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #333333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .mobile-nav ul li a:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .mobile-nav ul li a.active {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* About Page Specific Styles */
+        .about-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+        }
+
+        .about-title {
+            color: #c64b8c;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .about-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section h3 {
+            color: #c64b8c; 
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .about-text, .about-section p {
+            color: #666; /* Reverted back to gray */
+            margin-bottom: 1rem;
+        }
+
+        .random-facts {
+            padding-left: 20px;
+            margin-top: 0.5rem;
+        }
+
+        .random-facts li {
+            color: #666; /* Reverted back to gray */
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Adjustments - Updated from thoughts.html */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+
+            .about-content {
+                padding: 1.8rem;
+                margin-left: -10px;
+                margin-right: -10px;
+                width: calc(100% + 20px);
+                border-radius: 8px;
+            }
+
+            .about-title {
+                font-size: 1.6rem;
+            }
+            
+            /* Show mobile menu button and hide regular nav */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                width: 85%;
+            }
+            
+            nav ul {
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header>
+            <a href="index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
+            <!-- Mobile Menu Button - Added from thoughts.html -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Regular Navigation (Hidden on Mobile) -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="1aboutsection.html">About</a></li>
+                    <li><a href="2values.html">My Values</a></li>
+                    <li><a href="3thoughts.html" class="active">Thoughts</a></li>
+                    <li><a href="4contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Mobile Navigation (Dropdown) - Added from thoughts.html -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="1aboutsection.html">About</a></li>
+                <li><a href="2values.html">My Values</a></li>
+                <li><a href="3thoughts.html" class="active">Thoughts</a></li>
+                <li><a href="4contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- ABOUT CONTENT -->
+        <div class="about-content">
+            <h2 class="about-title">About Me</h2>
+            
+            <div class="about-section">
+                <p class="about-text">
+                    I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
+                </p>
+                <p class="about-text">
+                    Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
+                </p>
+                <p class="about-text">
+                    Growing up, my teachers told me I asked too many questions. They weren't wrong. I'm endlessly curious and passionate about problem-solving across industries, sectors, and scales. One of the directors at MFS once joked, "By the time she leaves, she'll know more people here than the rest of us combined." She wasn't wrong either. I talk to everyone. It's a habit shaped by switching schools across different states in India, and one that has become one of my strongest assets.  
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h3>My Life Beyond Work</h3>
+                <ul class="random-facts">
+                    <li>I bake amazing brownies.</li>
+                    <li>I have a younger brother who is way smarter than me - he doesn't know I think this way.</li>
+                    <li>I love hosting people - I get it from my mom, you would always have a bed and food at my home.</li>
+                    <li>If I like a book, I finish it in a day but these days I'm more of a podcast listener.</li>
+                    <li>People tell me I'm funny, I like to be humble about that.</li>
+                    <li>In Dec 2022, I stopped waiting for friends and family to travel with me. Since then, I have traveled to 8 countries solo across 4 continents.</li>
+                    <li>I soon realized, I'm not a backpacking type traveler. I love a good hotel but I make conscious efforts to engage with locals and learn about the culture.</li>
+                    <li>When I was a child I wanted to be an Astronaut - Kalpana Chawla was my inspiration, then physics hit me.</li>
+                    <li>Sucker for a good coffee but I keep on going back to my Indian style cold coffee.</li>
+                    <li>I'm a night person and I'm obsessed with stars.</li>
+                    <li>Always been a phone person and not a message person (I know, rare for a Gen-Z). If something urgent, call me.</li>
+                    <li>In school, I wrote an essay - "An ordinary girl living the extraordinary dream". My essay still holds true, just my dreams grew.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu - Added from thoughts.html -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuBtn.contains(event.target) && !mobileNav.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
