@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Shagun Jindal</title>
+    <style>
+        /* Reusing most of the styles from the main page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 70%; /* Reduced from 80% to increase margins */
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles - Same as main page */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .dot {
+            color: #c64b8c;
+            margin-left: 2px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #c64b8c;
+        }
+
+        /* About Page Specific Styles */
+        .about-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+        }
+
+        .about-title {
+            color: #c64b8c;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .about-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section h3 {
+            color: #c64b8c; 
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .about-text {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .random-facts {
+            padding-left: 20px;
+            margin-top: 0.5rem;
+        }
+
+        .random-facts li {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 0 15px;
+            }
+
+            .about-content {
+                padding: 1.5rem;
+            }
+
+            .about-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                width: 85%;
+            }
+            
+            nav ul {
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header>
+            <a href="index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="mainpage.html">Home</a></li>
+                    <li><a href="aboutsection.html">About</a></li>
+                    <li><a href="values.html">My Values</a></li>
+                    <li><a href="thoughts.html">Thoughts</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- ABOUT CONTENT -->
+        <div class="about-content">
+            <h2 class="about-title">About Me</h2>
+            
+            <div class="about-section">
+                <p class="about-text">
+                    I'm a technology enthusiast with a passion for innovation, product development, and strategic investing. My career has been a blend of technical expertise and business acumen, spanning roles in product management, venture investing, and emerging technologies.
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h3>My Life Beyond Work</h3>
+                <ul class="random-facts">
+                    <li>I bake amazing brownies.</li>
+                    <li>I have a younger brother who is way smarter than me - he doesn’t know I think this way.</li>
+                    <li>I love hosting people - I get it from my mom, you would always have a bed and food at my home.</li>
+                    <li>if I like a book, I finish it in a day but these days I’m more of a podcast listener.</li>
+                    <li>People tell me I’m funny, I like to be humble about that.</li>
+                    <li>In Dec 2022, I stoped waiting for friends and family to travel with me. Since then, I have traveled to 8 countries solo across 4 continents.</li>
+                    <li>I soon realized, I’m not a backpacking type traveler. I love a good hotel but I make conscious efforts to engage with locals and learn about the culture. </li>
+                    <li>When I was a child I wanted to be an Astronaut - Kalpana Chawla was my inspiration, then physics hit me. </li>
+                    <li>Sucker for a good coffee but I keep on going back to my Indian style cold coffee. </li>
+                    <li>I’m a night person and I’m obsessed with stars.</li>
+                    <li>Always been a phone person and not a message person (I know, rare for a Gen-Z). If something urgent, call me.</li>
+                    <li>In school, I wrote an essay - "An ordinary girl living the extraordinary dream". My essay still holds true, just my dreams grew. </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
