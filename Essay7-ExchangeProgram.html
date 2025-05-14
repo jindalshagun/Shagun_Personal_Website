@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Program | Shagun Jindal</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 70%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            margin-top: 0.5rem;
+            flex-wrap: wrap; /* Allow header to wrap on small screens */
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #333333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem; /* Add space when header wraps */
+        }
+
+        .logo .dot {
+            color: #c64b8c;
+            margin-left: 2px;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 100%;
+            background-color: #333;
+            border-radius: 3px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap; /* Allow nav items to wrap */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a:hover {
+            color: #c64b8c;
+        }
+
+        /* Blog Post Styles */
+        .blog-post {
+            background-color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .post-title {
+            color: #c64b8c;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .post-content {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+
+        .post-content h3 {
+            color: #333;
+            margin: 1.25rem 0 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap; /* Allow tags to wrap */
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            color: #666;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem; /* Space when wrapping */
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #c64b8c;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 600;
+            padding: 0.5rem 0;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Very small screens (mobile phones) */
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 0 10px;
+            }
+            
+            .blog-post {
+                padding: 1rem 1.5rem;
+            }
+            
+            .post-title {
+                font-size: 1.5rem;
+            }
+            
+            /* Show menu toggle on small screens */
+            .menu-toggle {
+                display: flex;
+            }
+            
+            /* Style navigation for mobile */
+            nav {
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+            }
+            
+            nav.active {
+                height: auto;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+                padding: 1rem 0;
+                align-items: flex-start;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+            
+            /* Adjust image grid for very small screens */
+            .image-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+            
+            .image-grid img {
+                height: 150px;
+            }
+            
+            /* Better header layout on mobile */
+            header {
+                justify-content: space-between;
+            }
+        }
+
+        /* For tablets */
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+
+            .post-title {
+                font-size: 1.7rem;
+            }
+
+            .blog-post {
+                padding: 1.5rem 2rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+            
+            .image-grid img {
+                height: 180px;
+            }
+        }
+
+        /* For larger tablets and small desktops */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                width: 85%;
+            }
+            
+            .blog-post {
+                padding: 2rem 3rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.2rem;
+            }
+            
+            .image-grid img {
+                height: 200px;
+            }
+        }
+
+        /* For desktops */
+        @media screen and (min-width: 1025px) {
+            .container {
+                width: 75%;
+            }
+            
+            .blog-post {
+                padding: 2rem 5rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.2rem;
+            }
+            
+            .image-grid img {
+                height: 220px;
+            }
+        }
+
+        /* For very large screens */
+        @media screen and (min-width: 1600px) {
+            .container {
+                max-width: 1200px;
+            }
+            
+            .image-grid img {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header>
+            <a href="../index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
+            
+            <!-- Mobile menu toggle button -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="mainpage.html">Home</a></li>
+                    <li><a href="aboutsection.html">About</a></li>
+                    <li><a href="values.html">My Values</a></li>
+                    <li><a href="thoughts.html">Thoughts</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- BLOG POST CONTENT -->
+        <article class="blog-post">
+            <h1 class="post-title">An Exchange Program to Remember (Spring 2020)</h1>
+            
+            <div class="post-meta">
+                <span>Published: March 2025</span>
+            </div>
+
+            <div class="post-content">
+                <p>
+                    This was the time I was in my ultimate rebel era. I have been a rebel many times in my life, but it takes particular courage to go against your Indian parents as the eldest child and declare you are not getting a job. The rules are set for you early on, a guidebook you are supposed to follow without question. I'm grateful my dad listened during this phase (They have always been supportive but have learned to be patient with me and communicate better).
+                </p>
+
+                <p>
+                    Approaching my last semester of undergrad, I had recently discovered a passion for data science and was adamant about avoiding the typical 9-5 job after graduation. My options were limited, but there was a chance to attend University of Florida for an exchange semester. Having never studied abroad, I craved that experience. Florida sounded perfect.
+                </p>
+
+                <p>
+                    Boarding that flight from India to the University of Florida marked a pivotal chapter in my life. One that would shape many of my future decisions.
+                </p>
+
+                <p>
+                    I will never forget Katelyn waiting at Gainesville airport that January night. Though we had only communicated online about the room I was subleasing, she offered to pick me up late at night. That first night, jet-lagged and overwhelmed, she simply handed me the keys and let me rest. She spent the next day, showing me around the city, the campus, confusing bus routes, hidden coffee shops and helped me navigate getting a phone plan. Who knew that simple act of kindness would blossom into a lifelong friendship? The kind where I would later celebrate Thanksgiving with her family and attend her housewarming party. The one where I know I can call anytime, certain she will listen. To this day, her warmth reminds me that some friendships are simply destined to be.
+                </p>
+
+                <p>
+                    My housing decision was deliberate, American roommates instead of seeking out the Indian community. Abby, Natalie, and Melissa welcomed me with genuine warmth and helped me settle in. Our "brownie, wine, and movie nights" quickly became sacred tradition, with Natalie experimenting with vegan baking that we would eat regardless of the outcome. My favorite memory remains our Galentine's Day celebration, a sunset drive to a vegan food truck where we laughed, explored, and shared life stories beneath a painted Florida sky. To this day, Abby remains one of my closest friends and biggest cheerleader.
+                </p>
+
+                <p>
+                    American education surprised me with its dynamic nature. Class discussions were refreshingly lively, professors expected active participation, not just silent absorption. Students challenged ideas openly, something often considered disrespectful back home. Suddenly, grades weren't determined solely by exams but by engagement and critical thinking.
+                </p>
+                
+                <p>
+                    To adapt to this new system, I decided to stay on campus during spring break to focus on studies. But as soon as the break ended, everything changed. COVID arrived abruptly. Classes moved online, campus emptied, and flights canceled worldwide.
+                </p>
+                
+                <p>
+                    Those uncertain weeks were terrifying. I had no idea how health insurance worked in this foreign country while Florida seemed bizarrely divided, most people still out in pools partying while others isolated completely. When evacuation flights were finally announced by the Indian government, securing a spot felt like winning an impossible lottery. Getting home involved a grueling 46 hours at airports and on flights between the US and India, followed by 14 days of quarantine in an Indian hotel room.
+                </p>
+
+                <p>
+                    Till this day the connections and the people remain my most valuable souvenirs from Florida. What began as an adventure to break the conventional path became a testament to human connection across cultures. Though COVID cut short many planned experiences, it deepened the ones I did have. The education was valuable, but the people, those who offered kindness without expectation were the true highlight of my American journey.
+                </p>
+               
+                <div class="image-grid">
+                    <img src="roomies1.jpg" alt="Group photo with my roommates during exchange" />
+                    <img src="exc6.png" alt="Florida campus view with palm trees" />
+                    <img src="exc1.png" alt="Celebrating Galentine's Day with friends" />
+                    <img src="exc4.png" alt="Exploring local shops in Gainesville" />
+                    <img src="exc5.png" alt="Weekend trip to a Florida beach" />
+                    <img src="exc3.png" alt="Campus library study session" />
+                    <img src="exc2.JPG" alt="Dinner with American and international students" />
+                    <img src="exc7.JPG" alt="Final gathering before COVID lockdown" />
+                </div>
+            </div>
+
+            <a href="thoughts.html" class="back-link">← Back to Thoughts</a>
+        </article>
+        
+        
+    </div>
+    
+    <!-- Script for mobile menu toggle -->
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
