@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The best days of my life</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 70%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap; /* Allow header to wrap on small screens */
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem; /* Add space when header wraps */
+        }
+
+        .logo .dot {
+            color: #c64b8c;
+            margin-left: 2px;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 100%;
+            background-color: #333;
+            border-radius: 3px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap; /* Allow nav items to wrap */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #c64b8c;
+        }
+
+        /* Blog Post Styles */
+        .blog-post {
+            background-color: white;
+            padding: 2rem 5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 1.5rem;
+        }
+
+        .post-title {
+            color: #c64b8c;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .post-content {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+
+        .post-content h3 {
+            color: #333;
+            margin: 1.25rem 0 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap; /* Allow tags to wrap */
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            color: #666;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem; /* Space when wrapping */
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #c64b8c;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+             transform: scale(1.03);
+        }
+      
+        /* Very small screens (mobile phones) */
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 0 10px;
+            }
+            
+            .blog-post {
+                padding: 1rem 1.5rem;
+            }
+            
+            .post-title {
+                font-size: 1.5rem;
+            }
+            
+            /* Show menu toggle on small screens */
+            .menu-toggle {
+                display: flex;
+            }
+            
+            /* Style navigation for mobile */
+            nav {
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+            }
+            
+            nav.active {
+                height: auto;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+                padding: 1rem 0;
+                align-items: flex-start;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+            
+            /* Adjust image grid for very small screens */
+            .image-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+            
+            .image-grid img {
+                height: 150px;
+            }
+            
+            /* Better header layout on mobile */
+            header {
+                justify-content: space-between;
+            }
+        }
+
+        /* For tablets */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+
+            .post-title {
+                font-size: 1.8rem;
+            }
+
+            .blog-post {
+                padding: 1.5rem 2rem;
+            }
+            
+            /* Fix: Use image-grid instead of image-container */
+            .image-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+            
+            .image-grid img {
+                height: 220px;
+            }
+        }
+
+        /* For larger tablets and small desktops */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                width: 85%;
+            }
+            
+            .blog-post {
+                padding: 2rem 3rem;
+            }
+        }
+
+        /* For very large screens */
+        @media screen and (min-width: 1600px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header>
+            <a href="../index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
+            
+            <!-- Mobile menu toggle button -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="1aboutsection.html">About</a></li>
+                    <li><a href="2values.html">My Values</a></li>
+                    <li><a href="3thoughts.html" class="active">Thoughts</a></li>
+                    <li><a href="4contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- BLOG POST CONTENT -->
+        <article class="blog-post">
+            <h1 class="post-title">The Best Days of My Life</h1>
+            
+            <div class="post-meta">
+                <span>Published: April 2023</span>
+            </div>
+
+            <div class="post-content">
+                
+                <p>
+                    Sometimes I catch myself in a moment, watching the sunset paint the Charles River in golden hues, or laughing with friends over homemade pasta and then I realize, these are the days I'll look back on. These are the best days of my life.
+                </p>
+
+                <p>
+                    Boston wasn't always home. I arrived here for my master's in data science with the usual mix of excitement and nerves that comes with new beginnings. But this city, with its cobblestone streets and academic energy, quickly became more than just a place to study.
+                </p>
+
+                <p>
+                    I live right in the heart of the city (Thanks to my Indian parents, who pay the rent). My apartment sits perfectly positioned where I can walk to the Charles within minutes. Some evenings, when code and algorithms have filled my brain to capacity, I stroll down and watch the sun melt into the horizon. There's something about watching the rowing teams glide across the water while the sky turns pink that puts everything into perspective. I continue to remind myself, these are the best days to my life. 
+                </p>
+
+                <p>
+                    On nights when the weather is perfect, you might find me by the reflection pool, soaking in the city lights mirrored in still water. It's my favourite spot in the city. Boston has a way of feeling both bustling and peaceful at once.
+                </p>
+
+                <p>
+                    Mornings, now begin with a ritual. Sometimes it's bagel and coffee from Pavements, other days it's a latte from Starbucks when I'm late for class. Weekends usually come with a shakshuka and a pastry at Tatte that fuels my coding sessions. These small pleasures ground me in the present.
+                </p>
+
+                <p>
+                    Home is more than just an address when you like the people you live with. I've somehow lucked into living with the kind of roommates people write sitcoms about. Our sushi nights have become a sacred tradition, amateur attempts at rolls that sometimes fall apart but always lead to laughter. We've created the kind of space where friends gather naturally, where everyone feels welcome.
+                </p>
+
+                <p>
+                    Beyond my apartment, I've found my people. For me, it is weird to say. For the first time, it feels like, I have a tribe. Friends from classes who understand the unique pain of debugging at 2 AM. Friends outside university who show me parts of Boston I would never discover in a guidebook. Our weekends blur together in the best possible way, game nights that get competitive, cooking experiments that occasionally set off smoke alarms, house parties where someone always insists on playing DJ (Bollywood songs for the most part).
+                </p>
+
+                <p>
+                    Sometimes we dress up and hit the clubs, dancing until our feet hurt (I often joke that I'm over my clubbing days aka too old for it).  Other nights, we find neighbourhood restaurants and linger over dinner conversations that jump from data ethics to dating disasters.
+                </p>
+
+                <p>
+                    It hurts but I know these days won't last forever. Soon enough, we'll graduate and scatter to different cities, pursuing careers and new adventures. The river will still flow, but I won't be there to watch it. Someone else will occupy my favourite table at Pavements. We wouldn't have the competitive energy in board games.
+                </p>
+
+                <p>
+                    But that's exactly why these are the best days. Because they're happening right now, because they're temporary, because I'm awake enough to recognize them while I'm living them.
+                </p>
+
+                <p>
+                    I'm living the best days of my life.
+                </p>
+                    
+                <div class="image-grid">
+                    <img src="bos1.JPG" alt="Boston sunset view" />
+                    <img src="bos10.png" alt="Boston cityscape" />
+                    <img src="bos3.png" alt="Charles River view" />
+                    <img src="bos7.JPG" alt="Friends gathering" />
+                    <img src="bos5.JPG" alt="Boston park" />
+                    <img src="bos12.png" alt="City lights at night" />
+                    <img src="bos11.png" alt="Coffee shop moment" />
+                    <img src="bos15.png" alt="Boston street view" />
+                    <img src="roomies2.JPG" alt="Roommates in apartment" />
+                    <img src="bos6.JPG" alt="Night out with friends" />
+                    <img src="bos14.JPG" alt="Boston harbor view" />
+                    <img src="bos4.JPG" alt="Weekend gathering" />
+                </div>
+            </div>
+
+            <a href="3thoughts.html" class="back-link">← Back to Thoughts</a>
+        </article>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colombia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 70%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .dot {
+            color: #c64b8c;
+            margin-left: 2px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #c64b8c;
+        }
+
+        /* Blog Post Styles */
+        .blog-post {
+            background-color: white;
+            padding: 2rem 5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 1.5rem;
+        }
+
+        .post-title {
+            color: #c64b8c;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .post-content {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .post-content p {
+            margin-bottom: 1rem;
+        }
+
+        .post-content h3 {
+            color: #333;
+            margin: 1.25rem 0 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            color: #666;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #c64b8c;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Hamburger menu for mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 100%;
+            background-color: #333;
+            border-radius: 10px;
+        }
+      
+        /* Mobile first approach - Mobile Styles (base) */
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 0 15px;
+            }
+            
+            header {
+                padding: 1.5rem 0 0.75rem;
+                margin-top: 0.5rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .blog-post {
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin-top: 1rem;
+            }
+            
+            .post-title {
+                font-size: 1.3rem;
+            }
+            
+            .post-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                justify-content: center;
+                margin-top: 0.75rem;
+                width: 100%;
+            }
+            
+            nav ul li a {
+                font-size: 0.8rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .image-grid img {
+                height: 200px;
+            }
+            
+            /* Optional: For even smaller phones */
+            @media screen and (max-width: 320px) {
+                .blog-post {
+                    padding: 1rem;
+                }
+                
+                .post-title {
+                    font-size: 1.2rem;
+                }
+                
+                .image-grid img {
+                    height: 180px;
+                }
+            }
+        }
+
+        /* Small tablets */
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .post-title {
+                font-size: 1.6rem;
+            }
+
+            .blog-post {
+                padding: 1.75rem 2.5rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .image-grid img {
+                height: 200px;
+            }
+        }
+
+        /* Large tablets and small desktops */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                width: 85%;
+            }
+            
+            .blog-post {
+                padding: 2rem 3rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .image-grid img {
+                height: 220px;
+            }
+        }
+
+        /* Regular desktops */
+        @media screen and (min-width: 1025px) and (max-width: 1599px) {
+            .image-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Very large screens */
+        @media screen and (min-width: 1600px) {
+            .container {
+                max-width: 1200px;
+            }
+            
+            .post-title {
+                font-size: 1.8rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .image-grid img {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header>
+            <a href="../index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="1aboutsection.html">About</a></li>
+                    <li><a href="2values.html">My Values</a></li>
+                    <li><a href="3thoughts.html" class="active">Thoughts</a></li>
+                    <li><a href="4contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- BLOG POST CONTENT -->
+        <article class="blog-post">
+            <h1 class="post-title">A Spontaneous Detour - 60 Hours in Colombia</h1>
+            
+            <div class="post-meta">
+                <span>Published: March 2025</span>
+            </div>
+
+            <div class="post-content">
+                <p>
+                    Did you know it's ridiculously hard to get from Seattle to anywhere in South America? There are hardly any direct flights, and almost all routes eventually land in Bogota, Colombia's capital. So I figured...why not make it a stop?
+                </p>
+
+                <p>
+                    Two days in <strong>Bogota </strong> felt like a good place to start. It was my first time in South America, and as always, I began with a city walking tour. We wandered through La Candelaria, learned about Colombia's complicated history, admired its vibrant street art, and tried local food (empanadas, of course).
+                </p>
+
+                <p>
+                    By the end of the day, I had seen most parts of the city. I didn't want to spent the next day doing nothing. So, in classic Shagun way, at 1 AM, I booked a 7 AM flight to a town I had once seen on Instagram. 
+                </p>
+
+                <p>
+                    Three hours of sleep later, I was at the airport. One short flight and a long, winding taxi ride later, I found myself in <strong>Salento</strong>, the gateway to Colombia's coffee region and the Cocora Valley. I bought a ticket for one of the colorful Jeep Willys and rode out to Cocora Valley, home to the tallest palm trees in the world. Surreal doesn't even begin to cover it. Every angle looked like it belonged on a passport cover. I couldn't stop staring. And then, I did something completely out of character, I decided to hike. Me, A hiker?
+                </p>
+
+                <p>
+                    I am not a hiker. But the strangers around me said it wasn't "too bad". Running on too little time, not enough sleep, and a whole lot of impulsiveness, I started the climb, completely ignoring the fact that "not too bad" is wildly subjective. 
+                </p>
+
+                <p>
+                    It was steep. My legs ached. I was out of breath.
+                </p>
+                
+                <p>
+                    But as people passed me on their way down, they kept cheering me on:
+                </p>
+                <p>
+                    "You've got this".
+                </p>
+
+                <p>
+                    "It's worth it at the top".
+                </p>
+
+                
+                <p>
+                    Somehow, those small acts of kindness kept me going. There's something quietly beautiful about the way strangers lift each other up in moments like this.
+                </p>
+                
+                <p>
+                    I thought I had reached the top, but of course I hadn't. More encouragements came, and I pushed further. One thing about me is that I never miss a good view. Finally, I reached the point. Towering wax palms, clouds drifting between peaks, and everything wrapped in green. I sat on a patch of wet grass, pulled out a sandwich I had packed at the airport, set my GoPro on time lapse and just <i>soaked it all in.</i>
+                 </p>
+                <p>
+                    As I sat there, a line from my favourite movie <i> Yeh Jawani hai Diwani</i> echoed in my mind: <i>"Kabhi kabhi jaha ho waha ruk kar, uss pal ko jee lo"</i>
+                </p>
+
+                <p>
+                    (Sometime, stop where you are and truely live the moment")
+
+                </p>
+                <p>
+                    And that's exactly what I did.
+                </p>
+                    
+                <p>
+                    After living the moment and taking photos, I started back down. Isn't it wild how easy the return feels? Like life, the hardest part is deciding to climb.
+                </p>
+
+                <p>
+                    Back in the Willys Jeep, this time I sat in the front as a group of friends sang in the back. It felt like a scene from a movie. And somehow, I made it back in time for the coffee tour.
+                </p>
+
+                <p>
+                    This region produces some of the best coffee in the world. I was handed a white poncho, hat and a woven basket (Totally felt like a full-fledged coffee farmer, until the bugs reminded me otherwise). As we stepped into the coffee fields, what stuck me the most wasn't the taste (though incredible), but the economics. For every 1 kilo of beans picked, a worker earner roughly 1,000 COP ($0.23). On a good day, they make around $10. The effort, precision, and dedication that goes into each cup of coffee truly humbled me.
+                </p>
+
+                <p>
+                    We ended the tour with freshly brewed coffee. Then, we sat together, a Finnish couple with their kids, another couple split between Venezuela and the US who travel to meet halfway. People's stories always remind me how beautifully complicated life is.
+                </p>
+                
+                <p>
+                    Heart full, I returned to Salento. I picked up a postcard, a travel tradition, and waited for my evening ride. The same driver who had brought me earlier offered to take me back. It was dark, the road was deserted, and the language barrier was real. I would be lying if I said I wasn't scared. It was one of those moments you question in real time, especially as a woman traveling alone. But he got me back to the airport safely. And once again, I was reminded, not everyone is good, but most people are.
+                </p>
+
+                <p>
+                    And just like that, it was time to leave Colombia. Onto Peru!
+
+                </p>
+               
+                <div class="image-grid">
+                    <img src="col7.png" alt="View of Colombian landscape" />
+                    <img src="col8.png" alt="Coffee plantation in Colombia" />
+                    <img src="col1.png" alt="Colorful streets in Bogota" />
+                    <img src="col4.png" alt="Wax palms in Cocora Valley" />
+                    <img src="col5.png" alt="Coffee beans closeup" />
+                    <img src="col2.png" alt="Jeep Willys transportation" />
+                    <img src="col3.png" alt="Colombian street art" />
+                    <img src="col6.png" alt="Mountain view in Salento" />
+                    <img src="col9.png" alt="Traditional Colombian food" />
+                </div>
+                    
+                 
+            </div>
+
+            <a href="3thoughts.html" class="back-link">← Back to Thoughts</a>
+        </article>
+    </div>
+</body>
+</html>
