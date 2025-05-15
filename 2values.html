@@ -80,6 +80,7 @@
             border: none;
             cursor: pointer;
             padding: 5px;
+            margin-left: auto; /* Move to extreme right */
         }
 
         .mobile-menu-btn span {
@@ -259,32 +260,32 @@
         <!-- HEADER SECTION -->
         <header>
             <a href="index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <!-- Regular Navigation (Hidden on Mobile) -->
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="1aboutsection.html">About</a></li>
                     <li><a href="2values.html">My Values</a></li>
-                    <li><a href="3thoughts.html" class="active">Thoughts</a></li>
+                    <li><a href="3thoughts.html">Thoughts</a></li>
                     <li><a href="4contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <!-- Mobile Menu Button - Moved to extreme right -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </header>
         
         <!-- Mobile Navigation (Dropdown) -->
         <div class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                    <li><a href="1aboutsection.html">About</a></li>
-                    <li><a href="2values.html">My Values</a></li>
-                    <li><a href="3thoughts.html" class="active">Thoughts</a></li>
-                    <li><a href="4contact.html">Contact</a></li>
+                <li><a href="1aboutsection.html">About</a></li>
+                <li><a href="2values.html" class="active">My Values</a></li>
+                <li><a href="3thoughts.html">Thoughts</a></li>
+                <li><a href="4contact.html">Contact</a></li>
             </ul>
         </div>
 
@@ -300,7 +301,7 @@
                     <span class="value-name">Do It. Instead of Thinking About It.</span>
                 </div>
                 <p class="value-description">
-                    Send that email. Attend that event. Build that product. The worst that can happen is a “no” or a flawed first version. That's still better than doing nothing at all. A rough product beats no product any day. Stop overthinking.
+                    Send that email. Attend that event. Build that product. The worst that can happen is a "no" or a flawed first version. That's still better than doing nothing at all. A rough product beats no product any day. Stop overthinking.
                 </p>
             </div>
             <div class="value-item">
