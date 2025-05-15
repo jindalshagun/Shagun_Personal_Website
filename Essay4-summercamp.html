@@ -164,18 +164,15 @@
             color: #555;
         }
 
-        .top-row {
-            display: flex;
-            gap: 20px;
-            align-items: stretch;
+        /* Option 2: Flex-Based Media Layout */
+        .media-container {
             margin-top: 2rem;
-            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
         }
 
         .video-container {
-            flex: 2;
-            display: flex;
-            flex-direction: column;
+            width: 100%;
+            margin-bottom: 15px;
         }
 
         .video-container video {
@@ -183,40 +180,32 @@
             height: auto;
             border-radius: 10px;
             object-fit: cover;
-            flex-grow: 1;
+            display: block;
         }
 
-        .image-column {
-            flex: 1;
+        .gallery {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .image-column img {
-            flex: 1;
-            width: 100%;
-            border-radius: 10px;
-            height: calc((100% - 20px) / 3); /* Ensures equal height for 3 images with 10px gaps */
-            object-fit: cover;
-            
-        }
-
-        .bottom-row {
-            margin-top: 20px;
-            display: flex;
+            flex-wrap: wrap;
             gap: 15px;
         }
 
-        .bottom-row img {
-            width: 32%;
+        .gallery-item {
+            flex: 1 0 calc(33.333% - 10px);
+            min-width: calc(33.333% - 10px);
+            max-width: calc(33.333% - 10px);
             border-radius: 10px;
+            overflow: hidden;
+            height: 180px; /* Fixed height for consistency */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
-        .image-column img:hover,
-        .bottom-row img:hover {
+        .gallery-item img:hover {
             transform: scale(1.05);
             cursor: pointer;
         }
@@ -272,30 +261,6 @@
                 font-size: 0.9rem;
             }
             
-            /* Adjust image layout for mobile */
-            .top-row {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .image-column {
-                flex-direction: row;
-                gap: 5px;
-            }
-            
-            .image-column img {
-                height: 80px;
-            }
-            
-            .bottom-row {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .bottom-row img {
-                width: 100%;
-            }
-            
             /* Better header layout on mobile */
             header {
                 justify-content: space-between;
@@ -303,6 +268,18 @@
             
             .post-content {
                 font-size: 0.9rem;
+            }
+            
+            /* Option 2 responsive adjustments for mobile */
+            .gallery {
+                gap: 10px;
+            }
+            
+            .gallery-item {
+                flex: 1 0 calc(50% - 5px);
+                min-width: calc(50% - 5px);
+                max-width: calc(50% - 5px);
+                height: 120px;
             }
         }
 
@@ -317,32 +294,12 @@
                 padding: 1.5rem 2rem;
             }
             
-            .top-row {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .video-container video {
-                height: 300px;
-            }
-            
-            .image-column {
-                flex-direction: row;
-                height: auto;
-            }
-            
-            .image-column img {
-                height: 100px;
-            }
-            
-            .bottom-row {
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-            
-            .bottom-row img {
-                width: 48%;
-                margin-bottom: 10px;
+            /* Option 2 responsive adjustments for tablets */
+            .gallery-item {
+                flex: 1 0 calc(50% - 7.5px);
+                min-width: calc(50% - 7.5px);
+                max-width: calc(50% - 7.5px);
+                height: 150px;
             }
         }
 
@@ -354,10 +311,6 @@
             
             .blog-post {
                 padding: 2rem 3rem;
-            }
-            
-            .image-column img {
-                height: 120px;
             }
         }
 
@@ -448,34 +401,52 @@
                 <p>
                     Who knew that adult summer camps could be so transformative? Looking back, I realize that my willingness to say "yes" to new experiences has consistently led me to the most meaningful moments of growth in my life. 
                 </p>
-                    
-                <div class="top-row">
-                    <div class="video-container">
-                      <video controls>
-                        <source src="IMG_2973.mov" type="video/mp4">
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                    <div class="image-column">
-                      <img src="camp4.JPG" alt="Camp activity photo">
-                      <img src="camp6.JPG" alt="Camp gathering">
-                      <img src="camp5.JPG" alt="Camp landscape">
-                    </div>
-                  </div>
                 
-                  <div class="bottom-row">
-                    <img src="camp1.jpg" alt="Friends in Boston">
-                    <img src="camp2.jpg" alt="Reunion in Boston">
-                    <img src="camp3.png" alt="Camp friends visit">
-                  </div>
+                <!-- NEW MEDIA LAYOUT - Option 2 -->
+                <div class="media-container">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="IMG_2973.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="camp4.JPG" alt="Camp activity photo">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="camp6.JPG" alt="Camp gathering">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="camp5.JPG" alt="Camp landscape">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="camp1.jpg" alt="Friends in Boston">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="camp2.jpg" alt="Reunion in Boston">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="camp3.png" alt="Camp friends visit">
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="caption">
                 The images from the last row are when friends visited Boston.
-              </div>
+            </div>
 
             <a href="3thoughts.html" class="back-link">← Back to Thoughts</a>
         </article>
     </div>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
