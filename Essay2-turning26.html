@@ -168,9 +168,7 @@
 
         .photo-item img {
             width: 100%;
-            height: auto;
-            max-height: 250px;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
@@ -233,11 +231,6 @@
                 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                 gap: 1rem;
             }
-            
-            .photo-item img {
-                height: auto;
-                max-height: 220px;
-            }
         }
         
         /* Additional breakpoint for very small screens */
@@ -257,12 +250,6 @@
             .photo-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
                 gap: 0.8rem;
-            }
-            
-            .photo-item img {
-                height: auto;
-                max-height: 180px;
-                object-fit: cover;
             }
             
             .photo-item p {
