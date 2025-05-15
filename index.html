@@ -85,6 +85,7 @@
             border: none;
             cursor: pointer;
             padding: 5px;
+            margin-left: auto; /* Move to extreme right */
         }
 
         .mobile-menu-btn span {
@@ -192,6 +193,12 @@
             font-size: 0.91rem;
             line-height: 1.6;
             margin-bottom: 1.8rem;
+        }
+
+        /* Contact section text alignment */
+        #contact .hero-text {
+            text-align: left; /* Move contact text to left */
+            padding-left: 0; /* Remove any padding */
         }
 
         /* CTA Buttons Section */
@@ -400,6 +407,7 @@
                 height: auto;
                 aspect-ratio: 1/1;
                 margin: 0 auto;
+                max-height: none; /* Remove max height restriction */
             }
             
             .hero-content {
@@ -417,6 +425,11 @@
                 text-align: center;
                 font-size: 0.9rem;
                 margin-bottom: 1.5rem;
+            }
+
+            /* Contact section text left aligned in mobile */
+            #contact .hero-text {
+                text-align: left;
             }
             
             /* CTA buttons */
@@ -470,7 +483,8 @@
             }
             
             .hero-image {
-                width: 80%;
+                width: 85%; /* Slightly wider to ensure full display */
+                object-fit: contain;
             }
             
             .cta-button {
@@ -499,7 +513,7 @@
         <header>
             <a href="index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
             
-            <!-- Mobile Menu Button -->
+            <!-- Mobile Menu Button (Moved to extreme right) -->
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
