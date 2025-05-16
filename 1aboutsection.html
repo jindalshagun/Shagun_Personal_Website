@@ -74,13 +74,14 @@
             color: #c64b8c;
         }
 
-        /* Mobile Menu - Added from thoughts.html */
+        /* Mobile Menu - Modified to position right */
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
             cursor: pointer;
             padding: 5px;
+            margin-left: auto; /* Push to the right */
         }
 
         .mobile-menu-btn span {
@@ -169,9 +170,11 @@
             font-weight: 600;
         }
 
+        /* Modified to add text-align: justify */
         .about-text, .about-section p {
-            color: #666; /* Reverted back to gray */
+            color: #666; 
             margin-bottom: 1rem;
+            text-align: justify;
         }
 
         .random-facts {
@@ -179,9 +182,11 @@
             margin-top: 0.5rem;
         }
 
+        /* Modified to add text-align: justify */
         .random-facts li {
-            color: #666; /* Reverted back to gray */
+            color: #666;
             margin-bottom: 0.5rem;
+            text-align: justify;
         }
 
         /* Responsive Adjustments - Updated from thoughts.html */
@@ -229,31 +234,31 @@
         <!-- HEADER SECTION -->
         <header>
             <a href="index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
-            <!-- Mobile Menu Button - Added from thoughts.html -->
+            <!-- Regular Navigation (Hidden on Mobile) -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="1aboutsection.html" class="active">About</a></li>
+                    <li><a href="2values.html">My Values</a></li>
+                    <li><a href="3thoughts.html">Thoughts</a></li>
+                    <li><a href="4contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Mobile Menu Button - Moved to extreme right -->
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <!-- Regular Navigation (Hidden on Mobile) -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="1aboutsection.html">About</a></li>
-                    <li><a href="2values.html">My Values</a></li>
-                    <li><a href="3thoughts.html" class="active">Thoughts</a></li>
-                    <li><a href="4contact.html">Contact</a></li>
-                </ul>
-            </nav>
         </header>
 
-        <!-- Mobile Navigation (Dropdown) - Added from thoughts.html -->
+        <!-- Mobile Navigation (Dropdown) - Fixed the active class -->
         <div class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="1aboutsection.html">About</a></li>
+                <li><a href="1aboutsection.html" class="active">About</a></li>
                 <li><a href="2values.html">My Values</a></li>
-                <li><a href="3thoughts.html" class="active">Thoughts</a></li>
+                <li><a href="3thoughts.html">Thoughts</a></li>
                 <li><a href="4contact.html">Contact</a></li>
             </ul>
         </div>
@@ -294,7 +299,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for Mobile Menu - Added from thoughts.html -->
+    <!-- JavaScript for Mobile Menu -->
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
