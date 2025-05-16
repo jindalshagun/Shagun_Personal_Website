@@ -206,6 +206,7 @@
         .cta-button {
             display: inline-flex;
             align-items: center;
+            justify-content: center; /* Center the text and icon */
             gap: 0.2rem;
             padding: 0.5rem 0.8rem;
             background-color: white;
@@ -218,6 +219,7 @@
             text-align: center;
             font-size: 0.8rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            width: 120px; /* Set fixed width for both buttons */
         }
 
         .cta-button:hover {
@@ -276,6 +278,7 @@
             font-size: 0.91rem;
             line-height: 1.6;
             margin-bottom: 1rem;
+            text-align: justify; /* Justify the text */
         }
 
         /* Random facts list */
@@ -290,6 +293,7 @@
             margin-bottom: 0.5rem;
             font-size: 0.91rem;
             line-height: 1.5;
+            text-align: justify; /* Justify the text */
         }
 
         .footer {
@@ -341,10 +345,9 @@
             
             .hero-image {
                 width: 70%;
-                height: auto;
-                aspect-ratio: 1/1;
+                height: 350px; /* Increase height in mobile view */
+                aspect-ratio: auto; /* Override the aspect-ratio to allow custom height */
                 margin: 0 auto;
-                max-height: none; /* Remove max height restriction */
             }
             
             .hero-content {
@@ -372,7 +375,7 @@
             }
             
             .cta-button {
-                width: 70%;
+                width: 120px; /* Maintain fixed width for consistency */
                 justify-content: center;
             }
             
@@ -388,12 +391,13 @@
             }
             
             .hero-image {
-                width: 80%; /* Slightly wider to ensure full display */
-                object-fit: contain;
+                width: 80%;
+                height: 380px; /* Even taller for smaller screens */
+                object-fit: cover;
             }
             
             .cta-button {
-                width: 90%;
+                width: 120px; /* Keep the same width as larger screens */
             }
             
             .section-title {
@@ -470,7 +474,7 @@
         <section id="about">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span class="section-title-icon">👋</span> About Me
+                    <span class="section-title-icon">👩‍💼</span> About Me
                 </h2>
             </div>
             
@@ -492,7 +496,7 @@
         <section id="life-beyond-work">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span class="section-title-icon">✨</span> My Life Beyond Work
+                    <span class="section-title-icon">✨</span> Some Random Facts
                 </h2>
             </div>
             
