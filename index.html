@@ -156,13 +156,12 @@
         }
 
         .hero-image {
-            flex: 0 0 45%;
+            flex: 0 0 40%;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            height: 650px;
+            height: 450px;
             object-fit: cover;
-            margin-top: 6rem; /* Added margin to move the photo down */
         }
 
         .hero-image img {
@@ -172,7 +171,7 @@
         }
 
         .hero-content {
-            flex: 0 0 50%;
+            flex: 0 0 55%;
             padding-top: 1rem;
         }
 
@@ -189,18 +188,70 @@
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 1.2rem;
-            text-align: justify;
         }
 
-        /* CTA Buttons Section */
+        /* CTA Button Section */
         .cta-buttons {
             display: flex;
-            gap: 2rem;
             margin-top: 1rem;
             margin-bottom: 1rem;
         }
 
-        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.5rem 0.8rem;
+            background-color: white;
+            color: #666666;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid #928d8d;
+            text-align: center;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button:hover {
+            background-color: #fdf5f9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(198, 75, 140, 0.15);
+        }
+
+        .button-icon {
+            font-size: 1rem;
+            margin-right: 0.4rem;
+        }
+
+        /* === SECTION DIVIDER === */
+        .section-divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 1.5rem 0;
+            width: 100%;
+        }
+
+        /* === FULL BIO SECTION === */
+        .full-bio {
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .full-bio-text {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
 
         /* === RESPONSIVE STYLES === */
         @media screen and (max-width: 1024px) {
@@ -214,7 +265,7 @@
                 gap: 1rem;
             }
             .hero-image {
-                height: 550px;
+                height: 400px;
             }
         }
 
@@ -245,10 +296,9 @@
             
             .hero-image {
                 width: 70%;
-                height: 400px; /* Increased fixed height for mobile view */
+                height: 400px;
                 margin: 0 auto;
-                max-height: none; /* Remove max height restriction */
-                margin-bottom: 0; /* Remove bottom margin to eliminate white space */
+                /* Fixed: Remove margin-bottom to eliminate white space after image */
             }
             
             .hero-content {
@@ -266,7 +316,20 @@
                 text-align: left;
                 font-size: 0.9rem;
                 margin-bottom: 1.5rem;
-                text-align: justify;
+            }
+            
+            /* CTA button */
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .full-bio-text {
+                text-align: left;
+            }
+            
+            .section-title {
+                text-align: center;
+                font-size: 1.3rem;
             }
         }
 
@@ -277,10 +340,8 @@
             }
             
             .hero-image {
-                width: 80%; /* Slightly wider to ensure full display */
-                height: 400px; /* Increased height for smallest screens */
-                object-fit: cover;
-                margin-bottom: 0; /* Remove any bottom margin to eliminate white space */
+                width: 80%;
+                height: 350px;
             }
         }
     </style>
@@ -301,7 +362,7 @@
             <!-- Regular Navigation (Hidden on Mobile) -->
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="1aboutsection.html">Career</a></li>
                     <li><a href="2values.html">My Values</a></li>
                     <li><a href="3thoughts.html">Thoughts</a></li>
@@ -328,20 +389,35 @@
             </div>
             <div class="hero-content">
                 <h1 class="hero-title">Rooted in tech, powered by connection, driven by purpose.</h1>
+                <p class="hero-text">Hi, I'm Shagun. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I have a background as a Data Scientist at MFS Investment Management and McAfee, and I hold a Masters in Data Science from Northeastern University. These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.</p>
                 
-                <p class="hero-text">
-                    I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
-                </p>
-                <p class="hero-text">
-                    Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
-                </p>
-                <p class="hero-text">
-                    Growing up, my teachers told me I asked too many questions. They weren't wrong. I'm endlessly curious and passionate about problem-solving across industries, sectors, and scales. One of the directors at MFS once joked, "By the time she leaves, she'll know more people here than the rest of us combined." She wasn't wrong either. I talk to everyone. It's a habit shaped by switching schools across different states in India, and one that has become one of my strongest assets.  
-                </p>
-                <p class="hero-text">
-                    These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.
-                </p>
+                <!-- CTA Button - Updated with anchor link -->
+                <div class="cta-buttons">
+                    <a href="#about-me" class="cta-button">
+                        <span class="button-icon">👩‍💼</span> About Me
+                    </a>
+                </div>
             </div>
+        </section>
+
+        <!-- SECTION DIVIDER -->
+        <div class="section-divider"></div>
+
+        <!-- FULL BIO SECTION - Added an id and title -->
+        <section id="about-me" class="full-bio">
+            <h2 class="section-title">About Me</h2>
+            <p class="full-bio-text">
+                I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
+            </p>
+            <p class="full-bio-text">
+                Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
+            </p>
+            <p class="full-bio-text">
+                Growing up, my teachers told me I asked too many questions. They weren't wrong. I'm endlessly curious and passionate about problem-solving across industries, sectors, and scales. One of the directors at MFS once joked, "By the time she leaves, she'll know more people here than the rest of us combined." She wasn't wrong either. I talk to everyone. It's a habit shaped by switching schools across different states in India, and one that has become one of my strongest assets.  
+            </p>
+            <p class="full-bio-text">
+                These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.
+            </p>
         </section>
     </div>
     
