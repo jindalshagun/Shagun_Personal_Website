@@ -151,7 +151,7 @@
         /* === CONTENT BOXES === */
         .content-box {
             background-color: white;
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-top: 2rem;
@@ -185,8 +185,8 @@
 
         .hero-content {
             flex: 0 0 55%;
-            padding-top: 5rem; /* Increased padding above the title */
-            padding-right: 2rem; /* Added more padding to the right */
+            padding-top: 4rem; /* Increased padding above the title */
+            padding-right: 1.5rem; /* Added more padding to the right */
         }
 
         .hero-title {
@@ -203,6 +203,31 @@
             line-height: 1.6;
             margin-bottom: 1.5rem;
             text-align: justify; /* Justify text as requested */
+        }
+
+        /* Styled underline for IPO text */
+        .highlight-underline {
+            position: relative;
+            text-decoration: none;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .highlight-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, transparent, #c64b8c, transparent);
+            transform: scaleX(1);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-underline:hover::after {
+            transform: scaleX(1.1);
+            height: 3px;
         }
 
         /* CTA Button Section - Removed but keeping styles for future reference */
@@ -350,7 +375,7 @@
             }
             
             .hero-text {
-                text-align: left; /* Remove justify on mobile */
+                text-align: justify; /* CHANGED: Keep justified text on mobile */
                 font-size: 1rem;
                 margin-bottom: 1.5rem;
             }
@@ -361,7 +386,7 @@
             }
             
             .full-bio-text {
-                text-align: left; /* Remove justify on mobile */
+                text-align: justify; /* CHANGED: Keep justified text on mobile */
                 font-size: 1rem;
             }
             
@@ -430,7 +455,7 @@
             </div>
             <div class="hero-content">
                 <h1 class="hero-title">Rooted in tech, powered by connection, driven by purpose.</h1>
-                <p class="hero-text">Hi, I'm Shagun. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I have a background as a Data Scientist at MFS Investment Management and McAfee, and I hold a Masters in Data Science from Northeastern University. These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.</p>
+                <p class="hero-text">Hi, I'm Shagun. Most recently, I worked on the <span class="highlight-underline">IPO of an edge computing company</span>, supporting the process from the investor side. I have a background as a Data Scientist at MFS Investment Management and McAfee, and I hold a Masters in Data Science from Northeastern University. These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.</p>
                 
                 <!-- Removed CTA Button with About Me link -->
             </div>
@@ -444,7 +469,7 @@
             <section id="about-me" class="full-bio">
                 <h2 class="section-title">About Me</h2>
                 <p class="full-bio-text">
-                    I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
+                    I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the <span class="highlight-underline">IPO of an edge computing company</span>, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
                 </p>
                 <p class="full-bio-text">
                     Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
