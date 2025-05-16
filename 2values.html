@@ -244,19 +244,18 @@
                 align-items: center;
             }
 
-            /* MODIFIED: Only justify the intro text, left-align all other text */
+            /* MODIFIED: Remove text justification for ALL boxes on mobile */
             .values-content p {
-                text-align: left;
+                text-align: justify;
+               
             }
             
             .value-description {
                 text-align: left;
-                padding-left: 1.5rem; /* Reduced left padding/margin */
-                padding-right: 0.5rem; /* Reduced right padding/margin */
             }
             
             .values-intro {
-                text-align: justify; /* Only the intro is justified */
+                text-align: left;
             }
 
             .values-content {
@@ -325,7 +324,7 @@
         <div class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="1aboutsection.html">About</a></li>
+                <li><a href="1aboutsection.html">Career</a></li>
                 <li><a href="2values.html" class="active">My Values</a></li>
                 <li><a href="3thoughts.html">Thoughts</a></li>
                 <li><a href="4contact.html">Contact</a></li>
