@@ -183,7 +183,7 @@
 
         .hero-content {
             flex: 0 0 55%;
-            padding-top: 1rem;
+            padding-top: 2rem; /* Increased padding above the title */
         }
 
         .hero-title {
@@ -202,7 +202,7 @@
             text-align: justify; /* Justify text as requested */
         }
 
-        /* CTA Button Section */
+        /* CTA Button Section - Removed but keeping styles for future reference */
         .cta-buttons {
             display: flex;
             margin-top: 1.5rem;
@@ -320,7 +320,8 @@
                 width: 70%;
                 height: 400px;
                 margin: 0 auto;
-                /* Fixed: Remove margin-bottom to eliminate white space after image */
+                margin-bottom: 0; /* Explicitly set to 0 to fix white space issue */
+                display: block; /* Added to ensure proper alignment */
             }
             
             .hero-content {
@@ -340,9 +341,9 @@
                 margin-bottom: 1.5rem;
             }
             
-            /* CTA button */
+            /* CTA button - Hiding on mobile as well */
             .cta-buttons {
-                justify-content: center;
+                display: none;
             }
             
             .full-bio-text {
@@ -405,30 +406,23 @@
             </ul>
         </div>
 
-        <!-- HERO SECTION -->
-        <div class="content-box">
-            <section class="hero">
-                <div class="hero-image">
-                    <img src="self.JPG" alt="Shagun Jindal">
-                </div>
-                <div class="hero-content">
-                    <h1 class="hero-title">Rooted in tech, powered by connection, driven by purpose.</h1>
-                    <p class="hero-text">Hi, I'm Shagun. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I have a background as a Data Scientist at MFS Investment Management and McAfee, and I hold a Masters in Data Science from Northeastern University. These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.</p>
-                    
-                    <!-- CTA Button - Updated with anchor link -->
-                    <div class="cta-buttons">
-                        <a href="#about-me" class="cta-button">
-                            <span class="button-icon">👩‍💼</span> About Me
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <!-- HERO SECTION - Removed content-box wrapper -->
+        <section class="hero">
+            <div class="hero-image">
+                <img src="self.JPG" alt="Shagun Jindal">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">Rooted in tech, powered by connection, driven by purpose.</h1>
+                <p class="hero-text">Hi, I'm Shagun. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I have a background as a Data Scientist at MFS Investment Management and McAfee, and I hold a Masters in Data Science from Northeastern University. These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.</p>
+                
+                <!-- Removed CTA Button with About Me link -->
+            </div>
+        </section>
 
-        <!-- SECTION DIVIDER - Moved outside content boxes -->
+        <!-- SECTION DIVIDER - Kept outside content boxes -->
         <div class="section-divider"></div>
 
-        <!-- FULL BIO SECTION - Added an id and title -->
+        <!-- FULL BIO SECTION - In a content-box -->
         <div class="content-box">
             <section id="about-me" class="full-bio">
                 <h2 class="section-title">About Me</h2>
