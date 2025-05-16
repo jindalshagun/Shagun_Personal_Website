@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Shagun Jindal</title>
+    <title>Career - Shagun Jindal</title>
     <style>
-        /* Reusing most of the styles from the main page */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +20,7 @@
         }
 
         .container {
-            width: 70%; /* Reduced from 80% to increase margins */
+            width: 70%;
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
@@ -74,14 +73,14 @@
             color: #c64b8c;
         }
 
-        /* Mobile Menu - Modified to position right */
+        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
             cursor: pointer;
             padding: 5px;
-            margin-left: auto; /* Push to the right */
+            margin-left: auto; /* Move to extreme right */
         }
 
         .mobile-menu-btn span {
@@ -143,60 +142,134 @@
             font-weight: 600;
         }
 
-        /* About Page Specific Styles */
-        .about-content {
+        /* Career Page Specific Styles */
+        .content-section {
             background-color: white;
             padding: 2.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-top: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .about-title {
+        .content-section p {
+            text-align: justify;
+        }
+
+        .section-title {
             color: #c64b8c;
             font-size: 1.5rem;
-            margin-bottom: 1.2rem;
-            font-weight: 600;
-        }
-
-        .about-section {
             margin-bottom: 1.5rem;
-        }
-
-        .about-section h3 {
-            color: #c64b8c; 
-            margin-bottom: 1.2rem;
-            font-size: 1.5rem;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title .icon {
+            margin-right: 0.5rem;
         }
 
-        /* Modified to add text-align: justify */
-        .about-text, .about-section p {
-            color: #666; 
-            margin-bottom: 1rem;
-            text-align: justify;
+        /* Updated experience item to match values-item */
+        .experience-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
         }
 
-        .random-facts {
-            padding-left: 20px;
-            margin-top: 0.5rem;
+        .experience-item:hover {
+            background-color: #f0f0f0;
         }
 
-        /* Modified to add text-align: justify */
-        .random-facts li {
+        /* Updated styles for company logos */
+        .experience-logo {
+            flex: 0 0 50px;
+            height: 50px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eee;
+        }
+
+        .experience-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .experience-content {
+            flex-grow: 1;
+        }
+
+        .experience-name {
+            color: #333;
+            font-size: 1.2rem; /* Updated to match value-name size */
+            font-weight: 600;
+            margin-bottom: 0.4rem; /* Updated to match value-header margin */
+        }
+
+        .experience-description {
             color: #666;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            padding-right: 2.5rem; /* Added more padding to the right */
             text-align: justify;
         }
 
-        /* Responsive Adjustments - Updated from thoughts.html */
+        /* Responsive Adjustments */
         @media screen and (max-width: 768px) {
             .container {
                 width: 95%;
                 padding: 0 10px;
             }
 
-            .about-content {
+            header {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+
+            .logo {
+                white-space: nowrap;
+                font-size: 1.8rem;
+            }
+            
+            .experience-item {
+                flex-direction: row;
+                align-items: flex-start;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 1.2rem 1.4rem;
+            }
+
+            .experience-logo {
+                flex: 0 0 45px;
+                height: 45px;
+                min-width: 45px; /* Ensure consistent width */
+            }
+            
+            .experience-name {
+                font-size: 1.1rem; /* Updated to match value-name mobile size */
+                white-space: normal;
+            }
+
+            .content-section p {
+                text-align: justify;
+            }
+            
+            .experience-description {
+                text-align: left;
+                padding-right: 0.5rem;
+            }
+
+            .content-section {
                 padding: 1.8rem;
                 margin-left: -10px;
                 margin-right: -10px;
@@ -204,7 +277,7 @@
                 border-radius: 8px;
             }
 
-            .about-title {
+            .section-title {
                 font-size: 1.6rem;
             }
             
@@ -227,6 +300,14 @@
                 gap: 1.2rem;
             }
         }
+
+        @media screen and (max-width: 480px) {
+            .experience-logo {
+                flex: 0 0 40px;
+                height: 40px;
+                min-width: 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -238,7 +319,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="1aboutsection.html" class="active">About</a></li>
+                    <li><a href="1aboutsection.html" class="active">Career</a></li>
                     <li><a href="2values.html">My Values</a></li>
                     <li><a href="3thoughts.html">Thoughts</a></li>
                     <li><a href="4contact.html">Contact</a></li>
@@ -251,55 +332,101 @@
                 <span></span>
             </button>
         </header>
-
-        <!-- Mobile Navigation (Dropdown) - Fixed the active class -->
+        
+        <!-- Mobile Navigation (Dropdown) -->
         <div class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="1aboutsection.html" class="active">About</a></li>
+                <li><a href="1aboutsection.html" class="active">Career</a></li>
                 <li><a href="2values.html">My Values</a></li>
                 <li><a href="3thoughts.html">Thoughts</a></li>
                 <li><a href="4contact.html">Contact</a></li>
             </ul>
         </div>
 
-        <!-- ABOUT CONTENT -->
-        <div class="about-content">
-            <h2 class="about-title">About Me</h2>
+        <!-- CAREER SECTION -->
+        <div class="content-section">
+            <h2 class="section-title">Career</h2>
             
-            <div class="about-section">
-                <p class="about-text">
-                    I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
-                </p>
-                <p class="about-text">
-                    Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
-                </p>
-                <p class="about-text">
-                    Growing up, my teachers told me I asked too many questions. They weren't wrong. I'm endlessly curious and passionate about problem-solving across industries, sectors, and scales. One of the directors at MFS once joked, "By the time she leaves, she'll know more people here than the rest of us combined." She wasn't wrong either. I talk to everyone. It's a habit shaped by switching schools across different states in India, and one that has become one of my strongest assets.  
-                </p>
+            <div class="experience-item">
+                <div class="experience-logo">
+                    <img src="burkhan.png" alt="Burkhan World Investments Logo">
+                </div>
+                <div class="experience-content">
+                    <h3 class="experience-name">Burkhan World Investments</h3>
+                    <p class="experience-description">
+                        Right hand to the Managing Partner during an IPO and tech investments, managing operations, special projects, and building effective systems.
+                    </p>
+                </div>
             </div>
-
-            <div class="about-section">
-                <h3>My Life Beyond Work</h3>
-                <ul class="random-facts">
-                    <li>I bake amazing brownies.</li>
-                    <li>I have a younger brother who is way smarter than me - he doesn't know I think this way.</li>
-                    <li>I love hosting people - I get it from my mom, you would always have a bed and food at my home.</li>
-                    <li>If I like a book, I finish it in a day but these days I'm more of a podcast listener.</li>
-                    <li>People tell me I'm funny, I like to be humble about that.</li>
-                    <li>In Dec 2022, I stopped waiting for friends and family to travel with me. Since then, I have traveled to 8 countries solo across 4 continents.</li>
-                    <li>I soon realized, I'm not a backpacking type traveler. I love a good hotel but I make conscious efforts to engage with locals and learn about the culture.</li>
-                    <li>When I was a child I wanted to be an Astronaut - Kalpana Chawla was my inspiration, then physics hit me.</li>
-                    <li>Sucker for a good coffee but I keep on going back to my Indian style cold coffee.</li>
-                    <li>I'm a night person and I'm obsessed with stars.</li>
-                    <li>Always been a phone person and not a message person (I know, rare for a Gen-Z). If something urgent, call me.</li>
-                    <li>In school, I wrote an essay - "An ordinary girl living the extraordinary dream". My essay still holds true, just my dreams grew.</li>
-                </ul>
+            
+            <div class="experience-item">
+                <div class="experience-logo">
+                    <img src="mfs.png" alt="MFS Investment Management Logo">
+                </div>
+                <div class="experience-content">
+                    <h3 class="experience-name">MFS Investment Management</h3>
+                    <p class="experience-description">
+                        Playing data detective across 200K financial advisors to spot where the real money is flowing. Using classification and prediction to uncover valuable opportunities.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-logo">
+                    <img src="mcafee.png" alt="McAfee Logo">
+                </div>
+                <div class="experience-content">
+                    <h3 class="experience-name">McAfee</h3>
+                    <p class="experience-description">
+                        Figuring out why people ditch antivirus software during free trials using unsupervised machine learning.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-logo">
+                    <img src="Fujitsu.jpg" alt="Fujitsu Consulting Logo">
+                </div>
+                <div class="experience-content">
+                    <h3 class="experience-name">Fujitsu Consulting</h3>
+                    <p class="experience-description">
+                        Solving sales and inventory puzzles using Time Series Forecasting and Machine Learning. Helping businesses know what will sell before it does.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- EDUCATION SECTION -->
+        <div class="content-section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="experience-item">
+                <div class="experience-logo">
+                    <img src="northeastern.png" alt="Northeastern University Logo">
+                </div>
+                <div class="experience-content">
+                    <h3 class="experience-name">Northeastern University, Boston</h3>
+                    <p class="experience-description">
+                        Masters in Data Science. Wanted to be among smart intellectual people. Excelled academically but did even better learning from people.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-logo">
+                    <img src="juit.png" alt="Jaypee University Logo">
+                </div>
+                <div class="experience-content">
+                    <h3 class="experience-name">Jaypee University, India</h3>
+                    <p class="experience-description">
+                        Bachelors in Computer Science. A beautiful university amidst the Himalayas in India. My first failure. Taught me about life and not giving up.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- JavaScript for Mobile Menu -->
+    
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
