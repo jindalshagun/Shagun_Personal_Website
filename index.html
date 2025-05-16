@@ -150,7 +150,7 @@
         /* === HERO SECTION === */
         .hero {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 3rem;
             margin: 2.5rem 0;
         }
@@ -183,16 +183,11 @@
             line-height: 1.3;
         }
 
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 0.7rem;
-        }
-
         .hero-text {
             color: #666;
             font-size: 0.91rem;
             line-height: 1.6;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.2rem;
         }
 
         /* CTA Buttons Section */
@@ -240,94 +235,6 @@
         .button-icon {
             font-size: 1rem;
             margin-right: 0.4rem;
-        }
-
-        /* === SECTION DIVIDER === */
-        .section-divider {
-            height: 1px;
-            background-color: #ddd;
-            margin: 1.3rem 0;
-            width: 100%;
-        }
-
-        /* === CAREER & EDUCATION SECTIONS === */
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.7rem;
-        }
-
-        .section-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .section-title-icon {
-            opacity: 0.8;
-        }
-
-        /* Grid layout for card items - UPDATED to one column */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.8rem;
-            margin-bottom: 3rem;
-        }
-
-        .card {
-            display: flex;
-            gap: 1.2rem;
-            align-items: flex-start;
-        }
-
-        .card-logo {
-            flex: 0 0 65px;
-            height: 65px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #eee;
-        }
-
-        .card-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .card-content {
-            flex-grow: 1;
-        }
-
-        .card-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            color: #333;
-        }
-
-        .card-description {
-            font-size: 0.8rem;
-            line-height: 1.5;
-            color: #666;
-            margin-bottom: 0.3rem;
-        }
-
-        .footer {
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 3rem 0;
-            color: #000;
-            opacity: 0.7;
         }
 
         /* === RESPONSIVE STYLES === */
@@ -387,7 +294,7 @@
             }
             
             .hero-text {
-                text-align: center;
+                text-align: left;
                 font-size: 0.9rem;
                 margin-bottom: 1.5rem;
             }
@@ -402,19 +309,6 @@
             .cta-button {
                 width: 70%;
                 justify-content: center;
-            }
-            
-            /* Card layout for mobile */
-            .card {
-                display: flex;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .card-logo {
-                flex: 0 0 60px;
-                height: 60px;
-                min-width: 60px; /* Ensure consistent width */
             }
         }
 
@@ -432,20 +326,6 @@
             
             .cta-button {
                 width: 90%;
-            }
-            
-            .card-logo {
-                flex: 0 0 50px;
-                height: 50px;
-                min-width: 50px;
-            }
-            
-            .section-title {
-                font-size: 1.1rem;
-            }
-            
-            .footer {
-                margin: 2rem 0;
             }
         }
     </style>
@@ -493,7 +373,19 @@
             </div>
             <div class="hero-content">
                 <h1 class="hero-title">Rooted in tech, powered by connection, driven by purpose.</h1>
-                <p class="hero-text">Hi, I'm Shagun. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I have a background as a Data Scientist at MFS Investment Management and McAfee, and I hold a Masters in Data Science from Northeastern University. These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.</p>
+                
+                <p class="hero-text">
+                    I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
+                </p>
+                <p class="hero-text">
+                    Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
+                </p>
+                <p class="hero-text">
+                    Growing up, my teachers told me I asked too many questions. They weren't wrong. I'm endlessly curious and passionate about problem-solving across industries, sectors, and scales. One of the directors at MFS once joked, "By the time she leaves, she'll know more people here than the rest of us combined." She wasn't wrong either. I talk to everyone. It's a habit shaped by switching schools across different states in India, and one that has become one of my strongest assets.  
+                </p>
+                <p class="hero-text">
+                    These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.
+                </p>
                 
                 <!-- CTA Buttons -->
                 <div class="cta-buttons">
@@ -506,106 +398,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- SECTION DIVIDER -->
-        <div class="section-divider"></div>
-
-        <!-- CAREER SECTION -->
-        <section id="career">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="section-title-icon">💼</span> Career
-                </h2>
-            </div>
-            
-            <div class="grid-container">
-                <!-- Career Item 1 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="burkhan.png" alt="Burkhan World Investments Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Burkhan World Investments</h3>
-                        <p class="card-description">Right hand to the Managing Partner during an IPO and tech investments, managing operations, special projects, and building effective systems.</p>
-                    </div>
-                </div>
-
-                <!-- Career Item 2 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="mfs.png" alt="MFS Investment Management Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">MFS Investment Management</h3>
-                        <p class="card-description">Playing data detective across 200K financial advisors to spot where the real money is flowing. Using classification and prediction to uncover valuable opportunities.</p>
-                    </div>
-                </div>
-
-                <!-- Career Item 3 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="mcafee.png" alt="McAfee Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">McAfee</h3>
-                        <p class="card-description">Figuring out why people ditch antivirus software during free trials using unsupervised machine learning.</p>
-                    </div>
-                </div>
-
-                <!-- Career Item 4 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="Fujitsu.jpg" alt="Fujitsu Consulting Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Fujitsu Consulting</h3>
-                        <p class="card-description">Solving sales and inventory puzzles using Time Series Forecasting and Machine Learning. Helping businesses know what will sell before it does.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DIVIDER BETWEEN CAREER AND EDUCATION -->
-        <div class="section-divider"></div>
-
-        <!-- EDUCATION SECTION -->
-        <section id="education">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="section-title-icon">🎓</span> Education
-                </h2>
-            </div>
-            
-            <div class="grid-container">
-                <!-- Education Item 1 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="northeastern.png" alt="Northeastern University Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Northeastern University, Boston</h3>
-                        <p class="card-description">Masters in Data Science. Wanted to be among smart intellectual people. Excelled academically but did even better learning from people.</p>
-                    </div>
-                </div>
-
-                <!-- Education Item 2 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="juit.png" alt="Jaypee University Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Jaypee University, India</h3>
-                        <p class="card-description">Bachelors in Computer Science. A beautiful university amidst the Himalayas in India. My first failure. Taught me about life and not giving up.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FINAL SECTION DIVIDER -->
-        <div class="section-divider"></div>
-        
     </div>
-    <div class="footer">Shagun Jindal</div>
     
     <script>
         // Mobile menu functionality
