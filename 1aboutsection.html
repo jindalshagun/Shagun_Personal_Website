@@ -26,7 +26,7 @@
             padding: 0 20px;
         }
 
-        /* Header Styles - Same as main page */
+        /* Header Styles - Matched with values page */
         header {
             display: flex;
             justify-content: space-between;
@@ -36,7 +36,7 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2.2rem; /* Updated to match values page */
             font-weight: 600;
             color: #333333;
             text-decoration: none;
@@ -64,7 +64,7 @@
         nav ul li a {
             text-decoration: none;
             color: #666666;
-            font-size: 0.9rem;
+            font-size: 1.2rem; /* Updated to match values page */
             transition: color 0.3s ease;
             font-weight: 500;
         }
@@ -142,7 +142,7 @@
             font-weight: 600;
         }
 
-        /* Career Page Specific Styles */
+        /* Career Page Specific Styles - Updated to match values page */
         .content-section {
             background-color: white;
             padding: 2.5rem;
@@ -158,7 +158,7 @@
 
         .section-title {
             color: #c64b8c;
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Updated to match values-title */
             margin-bottom: 1.5rem;
             font-weight: 600;
             display: flex;
@@ -169,7 +169,7 @@
             margin-right: 0.5rem;
         }
 
-        /* Updated experience item to match values-item */
+        /* Experience items updated to match value-item */
         .experience-item {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -212,15 +212,15 @@
 
         .experience-name {
             color: #333;
-            font-size: 1.2rem; /* Updated to match value-name size */
+            font-size: 1.5rem; /* Updated to match value-name */
             font-weight: 600;
-            margin-bottom: 0.4rem; /* Updated to match value-header margin */
+            margin-bottom: 0.4rem; /* Match value-header margin */
         }
 
         .experience-description {
             color: #666;
-            font-size: 0.9rem;
-            padding-right: 2.5rem; /* Added more padding to the right */
+            font-size: 1.2rem; /* Updated to match value-description */
+            padding-right: 1.5rem; /* Added padding to match value-description */
             text-align: justify;
         }
 
@@ -256,16 +256,19 @@
             }
             
             .experience-name {
-                font-size: 1.1rem; /* Updated to match value-name mobile size */
+                font-size: 1.1rem; /* Match value-name mobile size */
                 white-space: normal;
             }
 
+            /* MODIFIED: Remove text justification for mobile */
             .content-section p {
-                text-align: justify;
+                text-align: left;
+                font-size: 1rem;
             }
             
             .experience-description {
                 text-align: left;
+                font-size: 1rem;
                 padding-right: 0.5rem;
             }
 
@@ -300,14 +303,6 @@
                 gap: 1.2rem;
             }
         }
-
-        @media screen and (max-width: 480px) {
-            .experience-logo {
-                flex: 0 0 40px;
-                height: 40px;
-                min-width: 40px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -319,7 +314,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="1aboutsection.html" class="active">Career</a></li>
+                    <li><a href="1aboutsection.html">Career</a></li>
                     <li><a href="2values.html">My Values</a></li>
                     <li><a href="3thoughts.html">Thoughts</a></li>
                     <li><a href="4contact.html">Contact</a></li>
