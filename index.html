@@ -195,12 +195,6 @@
             margin-bottom: 1.8rem;
         }
 
-        /* Contact section text alignment */
-        #contact .hero-text {
-            text-align: left; /* Move contact text to left */
-            padding-left: 0; /* Remove any padding */
-        }
-
         /* CTA Buttons Section */
         .cta-buttons {
             display: flex;
@@ -277,10 +271,10 @@
             opacity: 0.8;
         }
 
-        /* Grid layout for card items */
+        /* Grid layout for card items - UPDATED to one column */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 1.8rem;
             margin-bottom: 3rem;
         }
@@ -325,34 +319,6 @@
             line-height: 1.5;
             color: #666;
             margin-bottom: 0.3rem;
-        }
-
-        /* === CONTACT SECTION === */
-        .contact-icons {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            margin-top: 0.8rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .contact-icon-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            color: #000000;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .contact-icon-link:hover {
-            color: #c64b8c;
-        }
-
-        .contact-icon-link img {
-            width: 24px;
-            height: 24px;
         }
 
         .footer {
@@ -404,8 +370,7 @@
             
             .hero-image {
                 width: 70%;
-                height: auto;
-                aspect-ratio: 1/1;
+                height: 350px; /* Increased fixed height for mobile view */
                 margin: 0 auto;
                 max-height: none; /* Remove max height restriction */
             }
@@ -426,11 +391,6 @@
                 font-size: 0.9rem;
                 margin-bottom: 1.5rem;
             }
-
-            /* Contact section text left aligned in mobile */
-            #contact .hero-text {
-                text-align: left;
-            }
             
             /* CTA buttons */
             .cta-buttons {
@@ -442,13 +402,6 @@
             .cta-button {
                 width: 70%;
                 justify-content: center;
-            }
-            
-            /* Career and Education grid */
-            .grid-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                margin-bottom: 2rem;
             }
             
             /* Card layout for mobile */
@@ -463,17 +416,6 @@
                 height: 60px;
                 min-width: 60px; /* Ensure consistent width */
             }
-            
-            /* Contact section */
-            .contact-icons {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1.2rem;
-            }
-            
-            .contact-icon-link {
-                width: 100%;
-            }
         }
 
         @media screen and (max-width: 480px) {
@@ -484,7 +426,8 @@
             
             .hero-image {
                 width: 80%; /* Slightly wider to ensure full display */
-                object-fit: contain;
+                height: 400px; /* Increased height for smallest screens */
+                object-fit: cover;
             }
             
             .cta-button {
@@ -655,32 +598,6 @@
                         <p class="card-description">Bachelors in Computer Science. A beautiful university amidst the Himalayas in India. My first failure. Taught me about life and not giving up.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- DIVIDER AFTER EDUCATION -->
-        <div class="section-divider"></div>
-        
-        <!-- CONTACT SECTION -->
-        <section id="contact">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="section-title-icon">📬</span> Contact Me
-                </h2>
-            </div>
-
-            <p class="hero-text">I'm always open to conversations.</p>
-
-            <div class="contact-icons">
-                <a class="contact-icon-link" href="mailto:shagunjindal1907@gmailcom" target="_blank">
-                    <img src="gmail.png" alt="Gmail Icon"> shagunjindal1907@gmailcom
-                </a>
-                <a class="contact-icon-link" href="https://www.linkedin.com/in/shagun-jindal" target="_blank">
-                    <img src="linkedin.png" alt="LinkedIn Icon"> linkedin.com/in/shagun-jindal
-                </a>
-                <a class="contact-icon-link" href="https://www.instagram.com/shagun_jindal" target="_blank">
-                    <img src="instagram.png" alt="Instagram Icon"> @shagun_jindal
-                </a>
             </div>
         </section>
 
