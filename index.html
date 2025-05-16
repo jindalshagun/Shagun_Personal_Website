@@ -17,6 +17,7 @@
             background-color: #f8f8f8; /* Slightly lighter grey */
             color: #333333;
             font-size: 15px;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -168,6 +169,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block; /* Fix potential white space issues */
         }
 
         .hero-content {
@@ -219,7 +221,7 @@
             text-align: center;
             font-size: 0.8rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            width: 120px; /* Set fixed width for both buttons */
+            width: 170px; /* Set fixed width for both buttons */
         }
 
         .cta-button:hover {
@@ -348,6 +350,7 @@
                 height: 350px; /* Increase height in mobile view */
                 aspect-ratio: auto; /* Override the aspect-ratio to allow custom height */
                 margin: 0 auto;
+                line-height: 0; /* Remove any line-height spacing */
             }
             
             .hero-content {
@@ -381,6 +384,7 @@
             
             .footer {
                 margin: 2rem 0;
+                line-height: 1; /* Fix potential spacing issues */
             }
         }
 
@@ -394,6 +398,7 @@
                 width: 80%;
                 height: 380px; /* Even taller for smaller screens */
                 object-fit: cover;
+                font-size: 0; /* Eliminate font-size related spacing */
             }
             
             .cta-button {
@@ -479,10 +484,10 @@
             </div>
             
             <p class="about-text">
-                I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
+                I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the <u>IPO of an edge computing company</u>, supporting the process from the <u>investor side</u>. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
             </p>
             <p class="about-text">
-                Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
+                Before that, I worked as a <u>Data Scientist</u> at <u>MFS Investment Management</u> and <u>McAfee</u>. Over the years, I've built a strong foundation in tech and earned a <u>Master's in Data Science from Northeastern University</u>. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
             </p>
             <p class="about-text">
                 Growing up, my teachers told me I asked too many questions. They weren't wrong. I'm endlessly curious and passionate about problem-solving across industries, sectors, and scales. One of the directors at MFS once joked, "By the time she leaves, she'll know more people here than the rest of us combined." She wasn't wrong either. I talk to everyone. It's a habit shaped by switching schools across different states in India, and one that has become one of my strongest assets.
