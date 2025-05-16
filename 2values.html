@@ -151,7 +151,7 @@
             margin-top: 2rem;
         }
 
-        /* CHANGE 1: Justify all text */
+        /* CHANGE 1: Justify all text in desktop only */
         .values-content p {
             text-align: justify;
         }
@@ -244,8 +244,16 @@
                 align-items: center;
             }
 
-            /* Don't justify text inside boxes on mobile */
+            /* MODIFIED: Remove text justification for ALL boxes on mobile */
+            .values-content p {
+                text-align: left;
+            }
+            
             .value-description {
+                text-align: left;
+            }
+            
+            .values-intro {
                 text-align: left;
             }
 
