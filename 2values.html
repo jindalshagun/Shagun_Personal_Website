@@ -151,6 +151,11 @@
             margin-top: 2rem;
         }
 
+        /* CHANGE 1: Justify all text */
+        .values-content p, .value-description {
+            text-align: justify;
+        }
+
         .values-title {
             color: #c64b8c;
             font-size: 1.5rem;
@@ -181,7 +186,8 @@
         .value-header {
             display: flex;
             align-items: center;
-            margin-bottom: 0.8rem;
+            /* CHANGE 2: Reduce space between heading and text */
+            margin-bottom: 0.4rem;
         }
 
         .value-icon {
@@ -206,6 +212,17 @@
             .container {
                 width: 95%;
                 padding: 0 10px;
+            }
+
+            /* CHANGE 3: Keep logo and text on same line */
+            header {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+
+            .logo {
+                white-space: nowrap;
+                font-size: 1.5rem;
             }
 
             .values-content {
