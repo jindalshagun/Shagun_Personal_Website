@@ -36,7 +36,7 @@
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 600;
             color: #333333;
             text-decoration: none;
@@ -64,7 +64,7 @@
         nav ul li a {
             text-decoration: none;
             color: #666666;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
             font-weight: 500;
         }
@@ -153,7 +153,7 @@
 
         .thoughts-title {
             color: #c64b8c;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
@@ -238,6 +238,17 @@
                 padding: 0 10px;
             }
 
+            /* Keep logo and text on same line */
+            header {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+
+            .logo {
+                white-space: nowrap;
+                font-size: 1.8rem; /* Maintain the same font size as desktop view */
+            }
+
             .thoughts-content {
                 padding: 1.8rem;
                 margin-left: -10px;
@@ -260,17 +271,13 @@
                 padding: 1.2rem 1.4rem;
             }
             
+            /* Modified: Remove text justification on mobile */
             .thoughts-intro {
                 padding-left: 0;
                 padding-right: 0;
                 margin-left: 0;
                 margin-right: 0;
-            }
-            
-            .thought-card {
-                margin-left: 0;
-                margin-right: 0;
-                padding: 1.2rem 1.4rem;
+                text-align: left;
             }
             
             /* Show mobile menu button and hide regular nav */
@@ -299,12 +306,6 @@
         <!-- HEADER SECTION -->
         <header>
             <a href="index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <!-- Regular Navigation (Hidden on Mobile) -->
             <nav>
                 <ul>
@@ -315,6 +316,12 @@
                     <li><a href="4contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <!-- Mobile Menu Button - Moved to extreme right -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </header>
         
         <!-- Mobile Navigation (Dropdown) -->
