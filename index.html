@@ -195,12 +195,6 @@
             margin-bottom: 1.8rem;
         }
 
-        /* Contact section text alignment */
-        #contact .hero-text {
-            text-align: left; /* Move contact text to left */
-            padding-left: 0; /* Remove any padding */
-        }
-
         /* CTA Buttons Section */
         .cta-buttons {
             display: flex;
@@ -256,7 +250,7 @@
             width: 100%;
         }
 
-        /* === CAREER & EDUCATION SECTIONS === */
+        /* === ABOUT SECTION === */
         .section-header {
             display: flex;
             justify-content: space-between;
@@ -277,82 +271,25 @@
             opacity: 0.8;
         }
 
-        /* Grid layout for card items */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.8rem;
-            margin-bottom: 3rem;
-        }
-
-        .card {
-            display: flex;
-            gap: 1.2rem;
-            align-items: flex-start;
-        }
-
-        .card-logo {
-            flex: 0 0 65px;
-            height: 65px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #eee;
-        }
-
-        .card-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .card-content {
-            flex-grow: 1;
-        }
-
-        .card-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            color: #333;
-        }
-
-        .card-description {
-            font-size: 0.8rem;
-            line-height: 1.5;
+        .about-text {
             color: #666;
-            margin-bottom: 0.3rem;
+            font-size: 0.91rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
-        /* === CONTACT SECTION === */
-        .contact-icons {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            margin-top: 0.8rem;
-            margin-bottom: 2.5rem;
+        /* Random facts list */
+        .random-facts {
+            padding-left: 20px;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .contact-icon-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            color: #000000;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .contact-icon-link:hover {
-            color: #c64b8c;
-        }
-
-        .contact-icon-link img {
-            width: 24px;
-            height: 24px;
+        .random-facts li {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.91rem;
+            line-height: 1.5;
         }
 
         .footer {
@@ -426,11 +363,6 @@
                 font-size: 0.9rem;
                 margin-bottom: 1.5rem;
             }
-
-            /* Contact section text left aligned in mobile */
-            #contact .hero-text {
-                text-align: left;
-            }
             
             /* CTA buttons */
             .cta-buttons {
@@ -444,35 +376,8 @@
                 justify-content: center;
             }
             
-            /* Career and Education grid */
-            .grid-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                margin-bottom: 2rem;
-            }
-            
-            /* Card layout for mobile */
-            .card {
-                display: flex;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .card-logo {
-                flex: 0 0 60px;
-                height: 60px;
-                min-width: 60px; /* Ensure consistent width */
-            }
-            
-            /* Contact section */
-            .contact-icons {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1.2rem;
-            }
-            
-            .contact-icon-link {
-                width: 100%;
+            .footer {
+                margin: 2rem 0;
             }
         }
 
@@ -489,12 +394,6 @@
             
             .cta-button {
                 width: 90%;
-            }
-            
-            .card-logo {
-                flex: 0 0 50px;
-                height: 50px;
-                min-width: 50px;
             }
             
             .section-title {
@@ -524,7 +423,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="1aboutsection.html">About</a></li>
+                    <li><a href="1aboutsection.html">Career</a></li>
                     <li><a href="2values.html">My Values</a></li>
                     <li><a href="3thoughts.html">Thoughts</a></li>
                     <li><a href="4contact.html">Contact</a></li>
@@ -536,7 +435,7 @@
         <div class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="1aboutsection.html">About</a></li>
+                <li><a href="1aboutsection.html">Career</a></li>
                 <li><a href="2values.html">My Values</a></li>
                 <li><a href="3thoughts.html">Thoughts</a></li>
                 <li><a href="4contact.html">Contact</a></li>
@@ -555,7 +454,7 @@
                 <!-- CTA Buttons -->
                 <div class="cta-buttons">
                     <a href="1aboutsection.html" class="cta-button">
-                        <span class="button-icon">👩‍💼</span> About Me
+                        <span class="button-icon">💼</span> Career
                     </a>
                     <a href="2values.html" class="cta-button secondary">
                         <span class="button-icon">⭐</span> My Values
@@ -567,121 +466,50 @@
         <!-- SECTION DIVIDER -->
         <div class="section-divider"></div>
 
-        <!-- CAREER SECTION -->
-        <section id="career">
+        <!-- ABOUT ME SECTION -->
+        <section id="about">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span class="section-title-icon">💼</span> Career
+                    <span class="section-title-icon">👋</span> About Me
                 </h2>
             </div>
             
-            <div class="grid-container">
-                <!-- Career Item 1 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="burkhan.png" alt="Burkhan World Investments Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Burkhan World Investments</h3>
-                        <p class="card-description">Right hand to the Managing Partner during an IPO and tech investments, managing operations, special projects, and building effective systems.</p>
-                    </div>
-                </div>
-
-                <!-- Career Item 2 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="mfs.png" alt="MFS Investment Management Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">MFS Investment Management</h3>
-                        <p class="card-description">Playing data detective across 200K financial advisors to spot where the real money is flowing. Using classification and prediction to uncover valuable opportunities.</p>
-                    </div>
-                </div>
-
-                <!-- Career Item 3 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="mcafee.png" alt="McAfee Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">McAfee</h3>
-                        <p class="card-description">Figuring out why people ditch antivirus software during free trials using unsupervised machine learning.</p>
-                    </div>
-                </div>
-
-                <!-- Career Item 4 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="Fujitsu.jpg" alt="Fujitsu Consulting Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Fujitsu Consulting</h3>
-                        <p class="card-description">Solving sales and inventory puzzles using Time Series Forecasting and Machine Learning. Helping businesses know what will sell before it does.</p>
-                    </div>
-                </div>
-            </div>
+            <p class="about-text">
+                I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
+            </p>
+            <p class="about-text">
+                Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
+            </p>
+            <p class="about-text">
+                Growing up, my teachers told me I asked too many questions. They weren't wrong. I'm endlessly curious and passionate about problem-solving across industries, sectors, and scales. One of the directors at MFS once joked, "By the time she leaves, she'll know more people here than the rest of us combined." She wasn't wrong either. I talk to everyone. It's a habit shaped by switching schools across different states in India, and one that has become one of my strongest assets.
+            </p>
         </section>
 
-        <!-- DIVIDER BETWEEN CAREER AND EDUCATION -->
+        <!-- SECTION DIVIDER -->
         <div class="section-divider"></div>
 
-        <!-- EDUCATION SECTION -->
-        <section id="education">
+        <!-- MY LIFE BEYOND WORK SECTION -->
+        <section id="life-beyond-work">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span class="section-title-icon">🎓</span> Education
+                    <span class="section-title-icon">✨</span> My Life Beyond Work
                 </h2>
             </div>
             
-            <div class="grid-container">
-                <!-- Education Item 1 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="northeastern.png" alt="Northeastern University Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Northeastern University, Boston</h3>
-                        <p class="card-description">Masters in Data Science. Wanted to be among smart intellectual people. Excelled academically but did even better learning from people.</p>
-                    </div>
-                </div>
-
-                <!-- Education Item 2 -->
-                <div class="card">
-                    <div class="card-logo">
-                        <img src="juit.png" alt="Jaypee University Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Jaypee University, India</h3>
-                        <p class="card-description">Bachelors in Computer Science. A beautiful university amidst the Himalayas in India. My first failure. Taught me about life and not giving up.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DIVIDER AFTER EDUCATION -->
-        <div class="section-divider"></div>
-        
-        <!-- CONTACT SECTION -->
-        <section id="contact">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="section-title-icon">📬</span> Contact Me
-                </h2>
-            </div>
-
-            <p class="hero-text">I'm always open to conversations.</p>
-
-            <div class="contact-icons">
-                <a class="contact-icon-link" href="mailto:shagunjindal1907@gmailcom" target="_blank">
-                    <img src="gmail.png" alt="Gmail Icon"> shagunjindal1907@gmailcom
-                </a>
-                <a class="contact-icon-link" href="https://www.linkedin.com/in/shagun-jindal" target="_blank">
-                    <img src="linkedin.png" alt="LinkedIn Icon"> linkedin.com/in/shagun-jindal
-                </a>
-                <a class="contact-icon-link" href="https://www.instagram.com/shagun_jindal" target="_blank">
-                    <img src="instagram.png" alt="Instagram Icon"> @shagun_jindal
-                </a>
-            </div>
+            <ul class="random-facts">
+                <li>I bake amazing brownies.</li>
+                <li>I have a younger brother who is way smarter than me - he doesn't know I think this way.</li>
+                <li>I love hosting people - I get it from my mom, you would always have a bed and food at my home.</li>
+                <li>If I like a book, I finish it in a day but these days I'm more of a podcast listener.</li>
+                <li>People tell me I'm funny, I like to be humble about that.</li>
+                <li>In Dec 2022, I stopped waiting for friends and family to travel with me. Since then, I have traveled to 8 countries solo across 4 continents.</li>
+                <li>I soon realized, I'm not a backpacking type traveler. I love a good hotel but I make conscious efforts to engage with locals and learn about the culture.</li>
+                <li>When I was a child I wanted to be an Astronaut - Kalpana Chawla was my inspiration, then physics hit me.</li>
+                <li>Sucker for a good coffee but I keep on going back to my Indian style cold coffee.</li>
+                <li>I'm a night person and I'm obsessed with stars.</li>
+                <li>Always been a phone person and not a message person (I know, rare for a Gen-Z). If something urgent, call me.</li>
+                <li>In school, I wrote an essay - "An ordinary girl living the extraordinary dream". My essay still holds true, just my dreams grew.</li>
+            </ul>
         </section>
 
         <!-- FINAL SECTION DIVIDER -->
