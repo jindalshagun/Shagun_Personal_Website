@@ -160,8 +160,9 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            height: 560px;
+            height: 650px;
             object-fit: cover;
+            margin-top: 6rem; /* Added margin to move the photo down */
         }
 
         .hero-image img {
@@ -185,7 +186,7 @@
 
         .hero-text {
             color: #666;
-            font-size: 0.91rem;
+            font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 1.2rem;
             text-align: justify;
@@ -213,7 +214,7 @@
                 gap: 1rem;
             }
             .hero-image {
-                height: 480px;
+                height: 550px;
             }
         }
 
@@ -244,9 +245,10 @@
             
             .hero-image {
                 width: 70%;
-                height: 380px; /* Increased fixed height for mobile view */
+                height: 400px; /* Increased fixed height for mobile view */
                 margin: 0 auto;
                 max-height: none; /* Remove max height restriction */
+                margin-bottom: 0; /* Remove bottom margin to eliminate white space */
             }
             
             .hero-content {
@@ -264,6 +266,7 @@
                 text-align: left;
                 font-size: 0.9rem;
                 margin-bottom: 1.5rem;
+                text-align: justify;
             }
         }
 
@@ -277,6 +280,7 @@
                 width: 80%; /* Slightly wider to ensure full display */
                 height: 400px; /* Increased height for smallest screens */
                 object-fit: cover;
+                margin-bottom: 0; /* Remove any bottom margin to eliminate white space */
             }
         }
     </style>
