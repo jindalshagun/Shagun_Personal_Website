@@ -26,8 +26,8 @@
 
         /* === LAYOUT === */
         .container {
-            width: 80%;
-            max-width: 1100px;
+            width: 85%;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -148,12 +148,22 @@
             font-weight: 600;
         }
 
+        /* === CONTENT BOXES === */
+        .content-box {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
         /* === HERO SECTION === */
         .hero {
             display: flex;
             align-items: flex-start;
             gap: 3rem;
-            margin: 3.5rem 0 2.5rem; /* Increased top padding */
+            margin: 0; /* Adjusted since we're using padding in the content box */
         }
 
         .hero-image {
@@ -161,7 +171,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            height: 520px;
+            height: 450px;
             object-fit: cover;
         }
 
@@ -237,7 +247,7 @@
 
         /* === FULL BIO SECTION === */
         .full-bio {
-            margin: 2.5rem 0;
+            margin: 0; /* Removed margin since we're using content-box padding */
         }
 
         .section-title {
@@ -274,6 +284,14 @@
             .container {
                 width: 90%;
                 padding: 0 15px;
+            }
+            
+            .content-box {
+                padding: 1.8rem;
+                margin-left: -10px;
+                margin-right: -10px;
+                width: calc(100% + 20px);
+                border-radius: 8px;
             }
             
             /* Match font size with values page */
@@ -388,42 +406,46 @@
         </div>
 
         <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-image">
-                <img src="self.JPG" alt="Shagun Jindal">
-            </div>
-            <div class="hero-content">
-                <h1 class="hero-title">Rooted in tech, powered by connection, driven by purpose.</h1>
-                <p class="hero-text">Hi, I'm Shagun. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I have a background as a Data Scientist at MFS Investment Management and McAfee, and I hold a Masters in Data Science from Northeastern University. These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.</p>
-                
-                <!-- CTA Button - Updated with anchor link -->
-                <div class="cta-buttons">
-                    <a href="#about-me" class="cta-button">
-                        <span class="button-icon">👩‍💼</span> About Me
-                    </a>
+        <div class="content-box">
+            <section class="hero">
+                <div class="hero-image">
+                    <img src="self.JPG" alt="Shagun Jindal">
                 </div>
-            </div>
-        </section>
+                <div class="hero-content">
+                    <h1 class="hero-title">Rooted in tech, powered by connection, driven by purpose.</h1>
+                    <p class="hero-text">Hi, I'm Shagun. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I have a background as a Data Scientist at MFS Investment Management and McAfee, and I hold a Masters in Data Science from Northeastern University. These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.</p>
+                    
+                    <!-- CTA Button - Updated with anchor link -->
+                    <div class="cta-buttons">
+                        <a href="#about-me" class="cta-button">
+                            <span class="button-icon">👩‍💼</span> About Me
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        <!-- SECTION DIVIDER -->
+        <!-- SECTION DIVIDER - Moved outside content boxes -->
         <div class="section-divider"></div>
 
         <!-- FULL BIO SECTION - Added an id and title -->
-        <section id="about-me" class="full-bio">
-            <h2 class="section-title">About Me</h2>
-            <p class="full-bio-text">
-                I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
-            </p>
-            <p class="full-bio-text">
-                Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
-            </p>
-            <p class="full-bio-text">
-                Growing up, my teachers told me I asked too many questions. They weren't wrong. I'm endlessly curious and passionate about problem-solving across industries, sectors, and scales. One of the directors at MFS once joked, "By the time she leaves, she'll know more people here than the rest of us combined." She wasn't wrong either. I talk to everyone. It's a habit shaped by switching schools across different states in India, and one that has become one of my strongest assets.  
-            </p>
-            <p class="full-bio-text">
-                These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.
-            </p>
-        </section>
+        <div class="content-box">
+            <section id="about-me" class="full-bio">
+                <h2 class="section-title">About Me</h2>
+                <p class="full-bio-text">
+                    I take chances. A lot of them. That mindset has led me down some unconventional paths. Most recently, I worked on the IPO of an edge computing company, supporting the process from the investor side. I worked directly with the managing partner: translating abstract ideas into concrete plans, managing communications, conducting technical diligence, taking notes, and building internal systems to keep everything on track. It was humbling, but exactly where I needed to be.
+                </p>
+                <p class="full-bio-text">
+                    Before that, I worked as a Data Scientist at MFS Investment Management and McAfee. Over the years, I've built a strong foundation in tech and earned a Master's in Data Science from Northeastern University. It was a calculated decision. I love building things and understanding how they work. But I've come to realize I don't enjoy writing code in a vacuum. I thrive when I can connect the dots, see the bigger picture, talk to customers, and understand real business needs. That's where my love for startups comes in. I use tech not as the destination, but as a means to solve problems that matter.
+                </p>
+                <p class="full-bio-text">
+                    Growing up, my teachers told me I asked too many questions. They weren't wrong. I'm endlessly curious and passionate about problem-solving across industries, sectors, and scales. One of the directors at MFS once joked, "By the time she leaves, she'll know more people here than the rest of us combined." She wasn't wrong either. I talk to everyone. It's a habit shaped by switching schools across different states in India, and one that has become one of my strongest assets.  
+                </p>
+                <p class="full-bio-text">
+                    These days, I'm diving deep into startups, investing, and automation. You'll often find me exploring new tools on Product Hunt, chasing ideas that blend technology with real-world impact.
+                </p>
+            </section>
+        </div>
     </div>
     
     <script>
