@@ -162,8 +162,9 @@
         .hero {
             display: flex;
             align-items: flex-start;
-            gap: 8rem;
+            gap: 3rem;
             margin: 0; /* Adjusted since we're using padding in the content box */
+            margin-top: 3rem; /* Added to increase space between logo and photo */
         }
 
         .hero-image {
@@ -179,11 +180,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block; /* Added to fix white space issue */
         }
 
         .hero-content {
             flex: 0 0 55%;
             padding-top: 2rem; /* Increased padding above the title */
+            padding-right: 1.5rem; /* Added more padding to the right */
         }
 
         .hero-title {
@@ -245,6 +248,14 @@
             width: 100%;
         }
 
+        /* New navbar divider */
+        .navbar-divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 0.5rem 0 0 0;
+            width: 100%;
+        }
+
         /* === FULL BIO SECTION === */
         .full-bio {
             margin: 0; /* Removed margin since we're using content-box padding */
@@ -252,7 +263,7 @@
 
         .section-title {
             font-size: 1.8rem; /* Increased to match design */
-            color: #333;
+            color: #c64b8c; /* Changed to pink as requested */
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
@@ -288,9 +299,9 @@
             
             .content-box {
                 padding: 1.8rem;
-                margin-left: -10px;
-                margin-right: -10px;
-                width: calc(100% + 20px);
+                margin-left: 0; /* Fixed spacing */
+                margin-right: 0; /* Fixed spacing */
+                width: 100%; /* Fixed width */
                 border-radius: 8px;
             }
             
@@ -322,11 +333,14 @@
                 margin: 0 auto;
                 margin-bottom: 0; /* Explicitly set to 0 to fix white space issue */
                 display: block; /* Added to ensure proper alignment */
+                font-size: 0; /* Added to fix white space issue */
+                line-height: 0; /* Added to fix white space issue */
             }
             
             .hero-content {
                 width: 100%;
                 padding-top: 0;
+                padding-right: 0;
             }
             
             .hero-title {
@@ -394,6 +408,9 @@
                 <span></span>
             </button>
         </header>
+        
+        <!-- Added navbar divider -->
+        <div class="navbar-divider"></div>
         
         <!-- Mobile Navigation (Dropdown) -->
         <div class="mobile-nav" id="mobileNav">
