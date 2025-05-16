@@ -23,6 +23,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        /* Header Styles - Matched with values and career pages */
         header {
             display: flex;
             justify-content: space-between;
@@ -31,7 +32,7 @@
             margin-top: 1.5rem;
         }
         .logo {
-            font-size: 2rem;
+            font-size: 2.2rem; /* Updated to match values and career pages */
             font-weight: 600;
             color: #333333;
             text-decoration: none;
@@ -55,7 +56,7 @@
         nav ul li a {
             text-decoration: none;
             color: #666666;
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Consistent with values page */
             transition: color 0.3s ease;
             font-weight: 500;
         }
@@ -63,8 +64,7 @@
             color: #c64b8c;
         }
         
-
-        /* Mobile Menu - Added from values.html */
+        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -133,6 +133,7 @@
             font-weight: 600;
         }
 
+        /* Contact Content - Updated to match values and career pages */
         .contact-content {
             background-color: white;
             padding: 2.5rem;
@@ -140,55 +141,78 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-top: 2rem;
         }
+        
         .contact-title {
             color: #c64b8c;
-            font-size: 1.8rem;
+            font-size: 1.8rem; /* Updated to match values-title */
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
+        
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
             margin-top: 2rem;
+            margin-left: 1rem;
+            margin-right: 1rem; /* Added margins to match value-item spacing */
         }
+        
         .contact-item {
             display: flex;
             align-items: center;
             gap: 1rem;
             transition: transform 0.3s ease;
+            padding: 1rem; /* Added padding to match value-item */
+            background-color: #f9f9f9;
+            border-radius: 8px;
         }
+        
         .contact-item:hover {
             transform: translateX(5px);
+            background-color: #f0f0f0; /* Added hover background to match value-item */
         }
+        
         .contact-icon {
             width: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+        
         .contact-icon img {
             display: block;
             width: 24px;
             height: 24px;
         }
+        
         .contact-link {
             text-decoration: none;
             color: #666666;
             font-weight: 500;
+            font-size: 1.2rem; /* Updated to match value-description */
             transition: color 0.3s ease;
         }
+        
         .contact-link:hover {
             color: #c64b8c;
         }
-       
-        }
 
-        /* Responsive Adjustments - Updated from values.html */
+        /* Responsive Adjustments */
         @media screen and (max-width: 768px) {
             .container {
                 width: 95%;
                 padding: 0 10px;
+            }
+            
+            header {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+
+            .logo {
+                white-space: nowrap;
+                font-size: 1.8rem; /* Consistent mobile logo size */
             }
 
             .contact-content {
@@ -203,6 +227,15 @@
                 font-size: 1.6rem;
             }
             
+            .contact-info {
+                margin-left: 0; /* Remove margins on mobile */
+                margin-right: 0;
+            }
+            
+            .contact-link {
+                font-size: 1rem; /* Smaller text on mobile to match other pages */
+            }
+            
             /* Show mobile menu button and hide regular nav */
             .mobile-menu-btn {
                 display: block;
@@ -211,10 +244,6 @@
             nav ul {
                 display: none;
             }
-        }
-
-        .logo {
-            font-size: 1.8rem;
         }
 
         @media screen and (max-width: 1024px) {
@@ -233,12 +262,6 @@
         <!-- HEADER SECTION -->
         <header>
             <a href="index.html" class="logo">Shagun Jindal<span class="dot">.</span></a>
-            <!-- Mobile Menu Button - Added from values.html -->
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <!-- Regular Navigation (Hidden on Mobile) -->
             <nav>
                 <ul>
@@ -246,12 +269,18 @@
                     <li><a href="1aboutsection.html">Career</a></li>
                     <li><a href="2values.html">My Values</a></li>
                     <li><a href="3thoughts.html">Thoughts</a></li>
-                    <li><a href="4contact.html" class="active">Contact</a></li>
+                    <li><a href="4contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </header>
 
-        <!-- Mobile Navigation (Dropdown) - Added from values.html -->
+        <!-- Mobile Navigation (Dropdown) -->
         <div class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -300,7 +329,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for Mobile Menu - Added from values.html -->
+    <!-- JavaScript for Mobile Menu -->
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
