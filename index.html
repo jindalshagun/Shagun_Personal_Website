@@ -151,11 +151,13 @@
         /* === CONTENT BOXES === */
         .content-box {
             background-color: white;
-            padding: 3.5rem; /* Increased padding for more space */
+            padding: 3rem;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-top: 2rem;
             margin-bottom: 2rem;
+            margin-left: 2rem; /* Added margin for space outside the box */
+            margin-right: 2rem; /* Added margin for space outside the box */
         }
 
         /* === HERO SECTION === */
@@ -202,7 +204,7 @@
             font-size: 1.2rem; /* Increased for better readability */
             line-height: 1.6;
             margin-bottom: 1.5rem;
-            text-align: left; /* Left align for desktop */
+            text-align: justify; /* Justify text as requested */
         }
 
         /* Styled underline for IPO text */
@@ -323,10 +325,10 @@
             }
             
             .content-box {
-                padding: 2.2rem; /* Increased padding for more space */
-                margin-left: 0; /* Fixed spacing */
-                margin-right: 0; /* Fixed spacing */
-                width: 100%; /* Fixed width */
+                padding: 1.8rem;
+                margin-left: 1.5rem; /* Added margin for space outside the box on mobile */
+                margin-right: 1.5rem; /* Added margin for space outside the box on mobile */
+                width: calc(100% - 3rem); /* Adjust width to account for margins */
                 border-radius: 8px;
             }
             
@@ -375,7 +377,7 @@
             }
             
             .hero-text {
-                text-align: center; /* Center align on mobile */
+                text-align: justify; /* Keep justified text on mobile */
                 font-size: 0.9rem; /* Reduced by 1 point for mobile */
                 margin-bottom: 1.5rem;
                 padding-left: 15px; /* Added padding on the left */
@@ -410,7 +412,10 @@
             }
             
             .content-box {
-                padding: 2rem 2.5rem; /* Increased side padding for more space */
+                padding: 1.8rem;
+                margin-left: 1rem; /* Adjusted for smaller screens */
+                margin-right: 1rem; /* Adjusted for smaller screens */
+                width: calc(100% - 2rem); /* Adjust width to account for margins */
             }
         }
     </style>
