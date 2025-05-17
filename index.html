@@ -151,7 +151,7 @@
         /* === CONTENT BOXES === */
         .content-box {
             background-color: white;
-            padding: 3rem;
+            padding: 3.5rem; /* Increased padding for more space */
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-top: 2rem;
@@ -202,7 +202,7 @@
             font-size: 1.2rem; /* Increased for better readability */
             line-height: 1.6;
             margin-bottom: 1.5rem;
-            text-align: justify; /* Justify text as requested */
+            text-align: left; /* Left align for desktop */
         }
 
         /* Styled underline for IPO text */
@@ -323,7 +323,7 @@
             }
             
             .content-box {
-                padding: 1.8rem;
+                padding: 2.2rem; /* Increased padding for more space */
                 margin-left: 0; /* Fixed spacing */
                 margin-right: 0; /* Fixed spacing */
                 width: 100%; /* Fixed width */
@@ -375,9 +375,11 @@
             }
             
             .hero-text {
-                text-align: justify; /* CHANGED: Keep justified text on mobile */
-                font-size: 1rem;
+                text-align: center; /* Center align on mobile */
+                font-size: 0.9rem; /* Reduced by 1 point for mobile */
                 margin-bottom: 1.5rem;
+                padding-left: 15px; /* Added padding on the left */
+                padding-right: 15px; /* Added padding on the right */
             }
             
             /* CTA button - Hiding on mobile as well */
@@ -386,8 +388,8 @@
             }
             
             .full-bio-text {
-                text-align: justify; /* CHANGED: Keep justified text on mobile */
-                font-size: 1rem;
+                text-align: justify; /* Keep justified text on mobile */
+                font-size: 0.9rem; /* Reduced by 1 point for mobile */
             }
             
             .section-title {
@@ -405,6 +407,10 @@
             .hero-image {
                 width: 80%;
                 height: 350px;
+            }
+            
+            .content-box {
+                padding: 2rem 2.5rem; /* Increased side padding for more space */
             }
         }
     </style>
@@ -455,7 +461,7 @@
             </div>
             <div class="hero-content">
                 <h1 class="hero-title">Rooted in tech, powered by connection, driven by purpose.</h1>
-                <p class="hero-text">Hi, I'm Shagun. I operate at the intersection of technology, business, and execution, turning ideas into action through cross-functional collaboration. My journey spans from data science roles at global investment firms to working with a family office, helping guide startups through pivotal moments, including an IPO. With a Master’s in Data Science from Northeastern and driven by curiosity, I’m currently exploring startups, automation, and technology that creates meaningful, real-world impact.
+                <p class="hero-text">Hi, I'm Shagun. I operate at the intersection of technology, business, and execution, turning ideas into action through cross-functional collaboration. My journey spans from data science roles at global investment firms to working with a family office, helping guide startups through pivotal moments, including an IPO. With a Master's in Data Science from Northeastern and driven by curiosity, I'm currently exploring startups, automation, and technology that creates meaningful, real-world impact.
                 </p>
                 <!-- Removed CTA Button with About Me link -->
             </div>
